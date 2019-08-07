@@ -1,0 +1,125 @@
+@font-face { font-family: 'Lato'; src: url('fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'), url('fonts/Lato-Regular.woff') format('woff'), url('fonts/Lato-Regular.ttf') format('truetype'), url('fonts/Lato-Regular.svg#Lato-Regular') format('svg'); font-weight: normal; font-style: normal; }
+
+/*pay*/
+body {
+    font-family: "Lato";
+    font-size: 15px;
+    color: #000;
+    font-weight: 400;
+    line-height: 1.5;
+}
+h4 {
+    font-size: 15px;
+    font-weight: 600;
+}
+label {
+    font-weight: 400;
+}
+.bg-light {
+    background-color: #f8f9fa !important;
+}
+.checkout-header a {
+    padding: 30px;
+}
+.logo-payme {
+    width: 104px;
+    height: 30px;
+    background-image: url("../img/various/payme.svg");
+    background-repeat: no-repeat;
+}
+.form-control:focus {
+    background-color: #fff;
+    border-color: var(--color-main);
+    box-shadow: none;
+}
+.input-group {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+}
+.input-group-text {
+	display: flex;
+    height: 48px;
+    align-items: center;
+    padding: .375rem .75rem;
+    margin-bottom: 0;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-right: none;
+    font-size: 16px;
+    background: #f8f9fa;
+    border-color: #dee2e7;
+    border-radius: 9px;
+    padding-left: 7px;
+    padding-right: 7px;
+    transition: 0.3s;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.form-control {
+    font-size: 16px;
+    background-color: #f8f9fa;
+    border-color: #dee2e7;
+    border-radius: 9px;
+    height: 48px;
+    padding-left: 14px;
+    padding-right: 14px;
+    transition: 0.3s;
+}
+.input-group-prepend>.input-group-text:first-child {
+    padding-left: 14px;
+}
+.input-group .addon-icon:after {
+    content: '';
+    transition: 0.3s;
+    filter: grayscale(100%);
+    opacity: 0.4;
+    width: 35px;
+    height: 24px;
+}
+.addon-icon-card:after {
+	background-image: url("../img/various/card.svg");
+}
+.input-group>.form-control, .input-group>.custom-select, .input-group>.custom-file {
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    margin-bottom: 0;
+}
+.input-group .form-control:not(:first-child) {
+    border-left: none;
+    padding-left: 7px;
+}
+.input-group .form-control:not(:last-child) {
+    border-right: none;
+    padding-right: 7px;
+}
+.input-group .form-control.date {
+    max-width: 84px;
+}
+#qr-wrapper img{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.font-weight-semibold {
+    font-weight: 600;
+}
+.btn-clean span svg{
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+}
+.btn-clean:hover span svg{
+    fill: #33cccc;
+}
+/*pay-end*/
