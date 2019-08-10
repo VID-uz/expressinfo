@@ -18,7 +18,7 @@
             </div>
         </div>
     @endif
-    <form action="{{ route('tags.update', $tag->id) }}" method="post" enctype="multipart/form-data" id="disableThis">
+    <form action="{{ route('catalogtags.update', $tag->id) }}" method="post" enctype="multipart/form-data" id="disableThis">
         @csrf
         @method('put')
         <div class="row">
@@ -86,7 +86,7 @@
                                 @foreach($categories as $category_list)
                                     <option value="{{ $category_list->id }}" @if(in_array($category_list->id, $categories_id)) selected @endif @if($category_list->hasChildren()) disabled @endif>{{ $category_list->ru_title }}</option>
                                     @if($category_list->hasChildren())
-                                        @include('admin.pages.catalog.components.categories', ['dilimiter' => '---'])
+                                        @include('admin.pages.tags.components.categories', ['dilimiter' => '---'])
                                     @endif
                                 @endforeach
                             </select>

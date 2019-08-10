@@ -11,7 +11,7 @@
         <div class="col-md-12"><div class="block">
                 <div class="block-header block-header-default">
                     <h3 class="block-title">Рекламадатели</h3>
-                    <a href="{{ route('tags.create') }}" class="btn btn-primary">
+                    <a href="{{ route('catalogtags.create') }}" class="btn btn-primary">
                         Создать
                     </a>
                 </div>
@@ -39,11 +39,11 @@
                                 </td>
                                 <td class="text-center">
                                     <div class="btn-group">
-                                        <a href="{{ route('tags.edit', [$item->id, 'list_id' => intval($i/10)]) }}" class="btn btn-sm btn-secondary js-tooltip-enabled" data-toggle="tooltip" title="" data-original-title="Edit">
+                                        <a href="{{ route('catalogtags.edit', [$item->id, 'list_id' => intval($i/10)]) }}" class="btn btn-sm btn-secondary js-tooltip-enabled" data-toggle="tooltip" title="" data-original-title="Edit">
                                             <i class="fa fa-pencil"></i>
                                         </a>
                                         @if($item->role_id != 1)
-                                            <form action="{{ route('tags.destroy', $item->id) }}" method="post">
+                                            <form action="{{ route('catalogtags.destroy', $item->id) }}" method="post">
                                                 @csrf
                                                 <input type="hidden" name="_method" value="DELETE">
                                                 <button class="btn btn-sm btn-secondary" onclick="return confirm('Вы уверены?');">

@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\CatalogClick;
-use App\Model\Catalog;
-use App\Model\CatalogCategory;
-use App\Model\Tag;
+use App\Models\Catalog;
+use App\Models\CatalogCategory;
+use App\Models\Tag;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -19,7 +18,8 @@ class CatalogController extends Controller
      */
     public function index()
     {
-        $catalog = Catalog::orderBy('id', 'desc')->get();
+        $catalog = Catalog::orderBy('id', 'desc')->paginate(10);
+
         return view('admin.pages.catalog.index', compact(
             'catalog'
         ));
@@ -56,8 +56,10 @@ class CatalogController extends Controller
 
         $item = Catalog::create($request->all());
         $item->uploadImage($request->file('image'));
-        if($request->get('categories_id') != null) :
-            $item->categories()->attach($request->get('categories_id'));
+        if($request->get('category_id') != null) :
+            $position = count(CatalogCategory::find($request->get('category_id'))->catalogs()->get());
+            $item->position = $position;
+            $item->save();
         endif;
         if($request->get('tags') != null) :
             $item->tags()->attach($request->get('tags'));
@@ -88,8 +90,9 @@ class CatalogController extends Controller
     {
         $item = Catalog::find($id);
         $categories = CatalogCategory::orderBy('id', 'desc')->where('parent_id', 0)->get();
-        $categories_id = $item->categories()->pluck('category_id')->toArray();
+
         $categories_list = $item->categories()->get();
+
         $users = User::all();
         $tags = [];
         foreach ($categories_list as $category)
@@ -103,7 +106,7 @@ class CatalogController extends Controller
         $tags_id = $item->tags()->pluck('tag_id')->toArray();
 
         return view('admin.pages.catalog.edit', compact(
-            'item', 'categories_id', 'categories', 'users', 'tags', 'tags_id'
+            'item', 'categories', 'users', 'tags', 'tags_id'
         ));
     }
 
@@ -129,11 +132,6 @@ class CatalogController extends Controller
         $item->tags()->detach();
         if($request->get('tags_id') != null) :
             $item->tags()->attach($request->get('tags_id'));
-        endif;
-
-        $item->categories()->detach();
-        if($request->get('categories_id') != null) :
-            $item->categories()->attach($request->get('categories_id'));
         endif;
 
         return redirect()->route('catalog.index');

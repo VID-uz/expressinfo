@@ -48,7 +48,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="catalog_single_header">
-                        <a href="\" onclick="history.back();return false;" class="catalog_single_header_back">
+                        <a href="#" onclick="window.history.go(-1);return false;" class="catalog_single_header_back">
                             Назад
                         </a>
                         <h1 class="catalog_single_header_contact">

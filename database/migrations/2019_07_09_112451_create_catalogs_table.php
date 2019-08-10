@@ -22,12 +22,16 @@ class CreateCatalogsTable extends Migration
             $table->longText('en_description')->nullable();
             $table->longText('uz_description')->nullable();
             $table->string('image')->nullable();
+            $table->string('logo_url')->nullable();
             $table->string('url')->nullable();
             $table->integer('user_id')->unsigned()->default(0);
             $table->integer('active')->unsigned()->default(1);
             $table->text('phone_number')->nullable();
+            $table->text('geo_location')->nullable();
             $table->text('geo_position_x')->nullable();
             $table->text('geo_position_y')->nullable();
+            $table->integer('position')->default(0);
+            $table->integer('category_id')->default(0);
             $table->timestamps();
         });
     }

@@ -33,7 +33,7 @@
     <div class="container">
         <div class="block-content categories_breadcrump m-0 py-10">
 
-            <a href="#" onclick="window.history.back();return false;" class="categories_back_btn">Назад</a>
+            <a href="#" onclick="window.history.go(-1);return false;" class="categories_back_btn">Назад</a>
             <!-- <a href="http://express.vid.uz/categories" class="categories_back_btn">Назад</a> -->
 
         </div>

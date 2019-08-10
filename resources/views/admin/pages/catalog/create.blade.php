@@ -148,7 +148,7 @@
                                 </div>
                             </div>
                             <div class="form-material floating">
-                                <select class="form-control" id="catselect2" name="categories_id[]" multiple>
+                                <select class="form-control" id="catselect2" name="category_id">
                                     @if($categories->isEmpty())
                                         <option value="0" disabled>-- нет --</option>
                                     @endif

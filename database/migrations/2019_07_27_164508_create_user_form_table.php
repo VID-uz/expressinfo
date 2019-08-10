@@ -19,6 +19,7 @@ class CreateUserFormTable extends Migration
             $table->integer('age')->unsigned()->nullable();
             $table->integer('sex')->unsigned()->nullable();
             $table->string('ip_address')->nullable();
+            $table->string('region')->nullable();
             $table->timestamps();
         });
     }

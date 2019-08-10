@@ -18,7 +18,7 @@
             </div>
         </div>
     @endif
-    <form action="{{ route('tags.store') }}" method="post" enctype="multipart/form-data" id="disableThis">
+    <form action="{{ route('catalogtags.store') }}" method="post" enctype="multipart/form-data" id="disableThis">
         @csrf
         <div class="row">
             <div class="col-md-12">
@@ -72,7 +72,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="">Категории</label>
+                            <label for="">Активный</label>
                             <select class="form-control" name="active">
                                 <option value="1" selected>Да</option>
                                 <option value="0">Нет</option>

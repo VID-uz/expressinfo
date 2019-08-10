@@ -16,7 +16,7 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(\App\Model\Catalog::class, function (Faker $faker) {
+$factory->define(\App\Models\Catalog::class, function (Faker $faker) {
     return [
         'ru_title' => 'Русский заголовок' . $faker->numberBetween(1, 100),
         'en_title' => 'Английский заголовок' . $faker->numberBetween(1, 100),

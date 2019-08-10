@@ -101,9 +101,7 @@
     <!-- END Stylesheets -->
 </head>
 <body>
-
-@if($cooked)
-<div class="contacts_popup_outer form_popup" style="@if($cooked != true) display:block !important; @else display:none; @endif position: fixed;top:0;right: 0;bottom: 0;left: 0;z-index: 20;height: auto;">
+<div class="contacts_popup_outer form_popup" style="display:none;position: fixed;top:0;right: 0;bottom: 0;left: 0;z-index: 20;height: auto;">
     <div class="contacts_popup_wrappper">
     	<div class="contacts_popup_inner" style="width: 300px;">
     		<form id="popup_form_second" action="#">
@@ -259,7 +257,6 @@
     </div>
 </div>
 <div class="contacts_popup2" id="form_popup" style="display: none; z-index: 13;"></div>
-@endif
 @include('front.layouts.partials.header')
 
 <!-- Main Container -->
@@ -305,8 +302,9 @@
 
 </script>
 	<script>
+        @if(Cookie::get('questionare') == null)
         window.onload = function() {
-            
+
 		    //$('.contacts_popup2').attr('style', 'display: none; z-index: 13;');
 		    //$('.contacts_popup_outer').attr('style', 'display:none;position: fixed;top:0;right: 0;bottom: 0;left: 0;z-index: 20;height: auto;');
             $.ajaxSetup({
@@ -334,9 +332,10 @@
 				}
 			});
 
-            
+
         };
         window.onunload = function(){};
+        @endif
 		$(function(){
 			var settings = {
                 stepsContainerTag: 'fadeThis',
@@ -394,7 +393,6 @@
             			    processData: false,
             			    contentType: false,
             				success: function(data){
-            					console.log(data);
             					if(data.success)
             					{
         					        $('.contacts_popup2').remove();
@@ -402,10 +400,10 @@
             					}
             				},
             				error: function (data) {
-            					console.log(data);
+            					// console.log(data);
             				}
             			});
-			    	console.log('finished');
+			    	// console.log('finished');
 			    },
 			};
 			$('#wizard').steps(settings);

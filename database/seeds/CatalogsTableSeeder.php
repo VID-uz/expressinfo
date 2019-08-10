@@ -11,6 +11,6 @@ class CatalogsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Model\Catalog::class, 10)->create();
+        factory(\App\Models\Catalog::class, 10)->create();
     }
 }

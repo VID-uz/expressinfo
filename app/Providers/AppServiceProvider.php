@@ -25,15 +25,5 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $cooked = false;
-        
-        if(Cookie::get('questionare'))
-        {
-            $cooked = false;
-        }else{
-            $cooked = true;
-        }
-        
-        View::share('cooked', $cooked);
     }
 }

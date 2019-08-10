@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Model\CatalogCategory;
-use App\Model\Tag;
+use App\Models\CatalogCategory;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -55,7 +55,7 @@ class TagsController extends Controller
             $item->categories()->attach($request->get('categories_id'));
         endif;
 
-        return redirect()->route('tags.index');
+        return redirect()->route('catalogtags.index');
     }
 
     /**
@@ -107,7 +107,7 @@ class TagsController extends Controller
             $tag->categories()->attach($request->get('categories_id'));
         endif;
 
-        return redirect()->route('tags.index');
+        return redirect()->route('catalogtags.index');
     }
 
     /**
@@ -122,6 +122,6 @@ class TagsController extends Controller
         $tag->categories()->detach();
         $tag->delete();
 
-        return redirect()->route('tags.index');
+        return redirect()->route('catalogtags.index');
     }
 }

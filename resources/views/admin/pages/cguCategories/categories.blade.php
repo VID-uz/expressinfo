@@ -21,6 +21,7 @@
                         <tr>
                             <th>Заголовок</th>
                             <th>Под категории</th>
+                            <th>Сайты</th>
                             <th class="text-center" style="width: 100px;">Actions</th>
                         </tr>
                         </thead>
@@ -29,10 +30,17 @@
                         <?php $i = 10; ?>
                         @foreach($categories as $category)
                             <tr>
-                                <td class="font-w600">{{ $category->ru_title}}</td>
+                                <td class="font-w600">{{strip_tags($category->ru_title) }}</td>
                                 <td class="font-w600">
                                     @if($category->hasChildren())
-                                        <a href="{{ route('cgucategories.categories', $category->id) }}">Есть</a>
+                                        <a href="{{ route('cgucategories.categories', $category->id) }}">Перейти</a>
+                                    @else
+                                        Нет
+                                    @endif
+                                </td>
+                                <td class="font-w600">
+                                    @if($category->hasSites())
+                                        <a href="{{ route('cgucategories.sites', $category->id) }}">Перейти</a>
                                     @else
                                         Нет
                                     @endif

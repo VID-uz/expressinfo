@@ -23,6 +23,7 @@
                             
                             <th style="font-size: 8px;" class="changeDize">Заголовок</th>
                             <th style="font-size: 8px;" class="changeDize">Категории</th>
+                            <th style="font-size: 8px;" class="changeDize">Сайты</th>
                             <th class="text-center changeDize" style="width: 100px;font-size: 8px;">Действия</th>
                         </tr>
                         </thead>
@@ -35,6 +36,13 @@
                                 <td class="font-w600">
                                     @if($category->hasChildren())
                                         <a href="{{ route('cgucategories.categories', $category->id) }}">Перейти</a>
+                                    @else
+                                        Нет
+                                    @endif
+                                </td>
+                                <td class="font-w600">
+                                    @if($category->hasSites())
+                                        <a href="{{ route('cgucategories.sites', $category->id) }}">Перейти</a>
                                     @else
                                         Нет
                                     @endif

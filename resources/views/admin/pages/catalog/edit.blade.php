@@ -148,12 +148,12 @@
                         </div>
                         <div class="form-group">
                             <label for="material-select2">Категория</label>
-                            <select class="form-control" id="catselect2" name="categories_id[]" multiple>
+                            <select class="form-control" id="catselect2" name="category_id">
                                 @if($categories->isEmpty())
                                     <option value="0" disabled>-- нет --</option>
                                 @endif
                                 @foreach($categories as $category_list)
-                                    <option value="{{ $category_list->id }}" @if(in_array($category_list->id, $categories_id)) selected @endif @if($category_list->hasChildren()) disabled @endif>{{ strip_tags($category_list->ru_title) }}</option>
+                                    <option value="{{ $category_list->id }}" @if($item->category_id == $category_list->id) selected @endif @if($category_list->hasChildren()) disabled @endif>{{ strip_tags($category_list->ru_title) }}</option>
                                     @if($category_list->hasChildren())
                                         @include('admin.pages.catalog.components.categories', ['dilimiter' => '---'])
                                     @endif

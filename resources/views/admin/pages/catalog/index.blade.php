@@ -2,6 +2,22 @@
 
 @section('css')
     <link rel="stylesheet" type="text/css" href="/dataTables/datatables.min.css"/>
+    <style>
+        .dataset{
+            position: absolute;
+            top: 100%;
+            background-color: #fff;
+            width: 500px;
+        }
+        .dataset ul{
+            padding: 10px;
+            list-style: none;
+        }
+        .dataset ul li{
+            padding: 10px;
+            border-bottom: 1px solid #e0e1e0;
+        }
+    </style>
 @endsection
 @section('content')
     <h2 class="content-heading">
@@ -10,7 +26,16 @@
     <div class="row">
         <div class="col-md-12"><div class="block">
                 <div class="block-header block-header-default">
-                    <h3 class="block-title">Рекламодатели</h3>
+                    <div>
+                        <h3 class="block-title">Рекламодатели</h3>
+                        <div style="position: relative;">
+                            <input type="text" class="form-control searchCatalog" name="searchCatalog" placeholder="Поиск">
+                            <div class="dataset" style="display: none;">
+                                <ul>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                     <a href="{{ route('catalog.create') }}" class="btn btn-primary">
                         Создать
                     </a>
@@ -37,7 +62,7 @@
                                 </td>
                                 <td class="font-w600">{{ strip_tags($item->ru_title) }}</td>
                                 <td class="d-none d-sm-table-cell">{{ $item->getClickCount() }}</td>
-                                <td class="d-none d-sm-table-cell">{{ strip_tags($item->categories->pluck('ru_title')->implode(', ')) }}</td>
+                                <td class="d-none d-sm-table-cell">{{ strip_tags($item->categories->ru_title) }}</td>
                                 <td class="d-none d-sm-table-cell">{!! ($item->active) ? '<font style="color: green;">Да</font>' : '<font style="color: red;">Нет</font>' !!}</td>
                                 <td class="text-center">
                                     <div class="btn-group">
@@ -59,6 +84,11 @@
                             <?php $i++; ?>
                         @endforeach
                         </tbody>
+                        <tfooter>
+                            <tr>
+                                <td colspan="6">{{ $catalog->links() }}</td>
+                            </tr>
+                        </tfooter>
                     </table>
                 </div>
             </div>
@@ -71,26 +101,46 @@
     <script type="text/javascript" src="/dataTables/datatables.min.js"></script>
     <script>
         $(document).ready(function() {
-            var table = $('#dataTable').DataTable({
-                "language": {
-                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Russian.json"
-                },
-                "order": []
+            $('.searchCatalog').blur(function (e) {
+                setTimeout(function () {
+                    $('.dataset').attr('style', 'display: none');
+                }, 200);
             });
-            {{--setTimeout(function () {--}}
-                {{--@if(isset($_GET['list_id']))--}}
-                {{--$.each($('.page-link '), function (index, value) {--}}
-                    {{--if($(value).data('dt-idx') == {{ $_GET['list_id'] }}){--}}
-                        {{--console.log($('.paginate_button')[index + 1]);--}}
-                        {{--$('.paginate_button').eq(index).addClass('active');--}}
-                    {{--}else{--}}
-                        {{--$('.paginate_button').eq(index).removeClass('active');--}}
-                    {{--}--}}
-                {{--});--}}
-                {{--@endif--}}
-            {{--}, 500);--}}
-
-
-        } );
+            $('.searchCatalog').focus(function (e) {
+                $('.dataset').attr('style', 'display: block');
+            });
+            $('.searchCatalog').on('input', function (e) {
+                e.preventDefault();
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                var formData = new FormData;
+                formData.append('text', $(this).val());
+                if($(this).val() != '')
+                {
+                    $.ajax({
+                        type: 'POST',
+                        url: '/admin/search/catalog',
+                        dataType: 'json',
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success: function(data){
+                            console.log(data);
+                            $('.dataset').attr('style', 'display: block');
+                            $('.dataset ul').empty();
+                            $.each(data, function (key, id) {
+                                $('.dataset ul').append('<li><a href="/admin/catalog/' + id + '/edit">' + key + '</a></li>');
+                            });
+                        },
+                        error: function (data) {
+                            console.log(data);
+                        }
+                    });
+                }
+            });
+        });
     </script>
 @endsection

@@ -21,6 +21,7 @@ class CreateCatalogCategoriesTable extends Migration
             $table->string('image')->nullable();
             $table->integer('parent_id')->default(0);
             $table->integer('position')->default(0);
+            $table->string('color')->nullable();
             $table->timestamps();
         });
     }

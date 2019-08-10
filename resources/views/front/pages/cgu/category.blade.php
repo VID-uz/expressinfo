@@ -34,7 +34,7 @@
         <div class="block-content categories_breadcrump m-0 py-10">
 
 
-            <a href="#" onclick="window.history.back();return false;" class="categories_back_btn">Назад</a>
+            <a href="#" onclick="window.history.go(-1);return false;" class="categories_back_btn">Назад</a>
             <!-- <a href="http://express.vid.uz/categories" class="categories_back_btn">Назад</a> -->
 
         </div>
@@ -61,7 +61,7 @@
                     <a @if($catalog->video != '') href="{{ $catalog->video }}" @endif class="categories_item">
                         <div class="categories_item_inner">
                             <div class="categories_item_icon">
-                                <img src="{{ $catalog->getUrl() }}" alt="">
+                                <img src="{{ $catalog->getImage() }}" alt="">
                             </div>
                             <div class="categories_item_info">
                                 <h1 class="categories_item_title d-sm-none d-none d-lg-block d-md-block">

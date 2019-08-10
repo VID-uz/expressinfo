@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Model\CatalogCategory;
+use App\Models\CguSite;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\CguCategories;
+use App\Models\CguCategories;
 
 class CguCategoryController extends Controller
 {
@@ -22,11 +22,7 @@ class CguCategoryController extends Controller
             'categories'
         ));
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function categories($id)
     {
         $categories = CguCategories::findOrFail($id)->children;
@@ -35,11 +31,7 @@ class CguCategoryController extends Controller
             'categories'
         ));
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function catalogs($id)
     {
         $category = CguCategories::findOrFail($id);
@@ -49,11 +41,16 @@ class CguCategoryController extends Controller
         ));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function sites($id)
+    {
+        $category = CguCategories::findOrFail($id);
+        $sites = $category->sites()->orderBy('position', 'asc')->paginate(10);
+        $all = count(CguSite::all());
+        return view('admin.pages.cguCategories.sites', compact(
+            'sites', 'all'
+        ));
+    }
+
     public function create()
     {
         $categories = CguCategories::where('parent_id', 0)->get();

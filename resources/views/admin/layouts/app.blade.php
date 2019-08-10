@@ -34,11 +34,6 @@
     <link rel="stylesheet" id="css-main" href="{{ asset('datatables/Buttons-1.5.6/css/buttons.bootstrap4.min.css') }}">
     <link rel="stylesheet" id="css-main" href="{{ asset('datatables/Responsive-2.2.2/css/responsive.bootstrap4.min.css') }}">
     @yield('css')
-    <style>
-        .fa-pencil{
-            padding-top: 9px;
-        }
-    </style>
 
     <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
     <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/flat.min.css"> -->

@@ -24,6 +24,8 @@ class CreateCguSitesTable extends Migration
             $table->string('image')->nullable();
             $table->string('video')->nullable();
             $table->integer('active')->unsigned()->default(1);
+            $table->integer('category_id')->default(0);
+            $table->integer('position')->default(0);
             $table->timestamps();
         });
     }

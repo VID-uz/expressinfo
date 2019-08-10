@@ -2,14 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\CatalogClick;
-use App\Model\Catalog;
-use App\Model\CatalogCategory;
-use App\Model\Tag;
-use App\CguCategories;
-use App\CguCatalog;
-use App\User;
-use App\CguSite;
+use App\Models\CguCategories;
+use App\Models\CguSite;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -59,6 +53,10 @@ class CguSiteController extends Controller
 
         $item = CguSite::create($request->all());
         $item->uploadImage($request->file('image'));
+        if($request->get('category_id') != null)
+        {
+            $item->position = count(CguCategories::find($request->get('category_id'))->sites()->get());
+        }
 
 
         return redirect()->route('cgusites.index');

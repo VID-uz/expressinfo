@@ -37,7 +37,9 @@
                                 <td class="font-w600">{{ $category->ru_title}}</td>
                                 <td class="font-w600">
                                     @if($category->hasChildren())
-                                        <a href="{{ route('catalogcategories.categories', $category->id) }}">Есть</a>
+                                        <a href="{{ route('catalogcategories.categories', $category->id) }}">Перейти</a>
+                                    @else
+                                        Нет
                                     @endif
                                 </td>
                                 <td class="font-w600">

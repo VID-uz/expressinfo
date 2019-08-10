@@ -32,7 +32,7 @@
                             <tr>
                                 <td class="font-w600">{{ strip_tags($item->ru_title) }}</td>
                                 @if($item->hasCategory())
-                                    <td class="d-none d-sm-table-cell">{{ $item->category->ru_title }}</td>
+                                    <td class="d-none d-sm-table-cell">{{ strip_tags($item->category->ru_title) }}</td>
                                 @else
                                     <td class="d-none d-sm-table-cell">Нет</td>
                                 @endif
