@@ -19,7 +19,7 @@
     <link rel="stylesheet" id="css-main" href="{{ asset('css/jquery.fancybox.min.css') }}">
     <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/owl.theme.default.min.css') }}">
     <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/third_party.css') }}?ver=6">
+    <link rel="stylesheet" href="{{ asset('assets/css/third_party.css') }}?ver=7">
 </head>
 <body>
 <div class="contacts_popup" id="contacts_popup" style="display: none;">
