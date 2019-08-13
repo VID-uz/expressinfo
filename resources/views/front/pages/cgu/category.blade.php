@@ -71,7 +71,7 @@
                     <a @if($catalog->video != '') href="{{ $catalog->video }}" @endif class="categories_item categories_item2">
                         <div class="categories_item_inner">
                             <div class="categories_item_icon">
-                                <img src="{{ $catalog->getUrl() }}" alt="">
+                                <img src="{{ $catalog->getImage() }}" alt="">
                             </div>
                             <div class="categories_item_info">
                                 <h1 class="categories_item_title">
