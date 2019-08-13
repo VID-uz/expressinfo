@@ -3845,7 +3845,7 @@ small{
 
 	.catalog_single_main{
 
-		padding-top: 40px;
+		padding-top: 1260px;
 
     	padding-bottom: 30px;
 
@@ -3861,13 +3861,13 @@ small{
 
 	.catalog_single_main_info{
 
-	    width: calc(100% - 110px);
+	    width: calc(100%);
 
 	}
 
 	.catalog_single_main_info_title{
 
-		font-size: 14px;
+		font-size: 23px;
 
 	}
 
@@ -3879,7 +3879,7 @@ small{
 
 	.catalog_single_main_info_list_item{
 
-		font-size: 9px;
+		font-size: 18px;
 
 	}
 
