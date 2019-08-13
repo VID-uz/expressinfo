@@ -54,86 +54,86 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="block">
-                    <div class="block-header">
-                        <h3 class="block-title">
-                            Используемые операционные системы
-                        </h3>
-                    </div>
-                    <div class="block-content block-content-full">
-                        <div class="pull-all">
-                            <!-- Lines Chart Container -->
-                            <div id="chartContainer" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {{--<div class="col-md-6">--}}
+                {{--<div class="block">--}}
+                    {{--<div class="block-header">--}}
+                        {{--<h3 class="block-title">--}}
+                            {{--Используемые операционные системы--}}
+                        {{--</h3>--}}
+                    {{--</div>--}}
+                    {{--<div class="block-content block-content-full">--}}
+                        {{--<div class="pull-all">--}}
+                            {{--<!-- Lines Chart Container -->--}}
+                            {{--<div id="chartContainer" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
         </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="block">
-                    <div class="block-header">
-                        <h3 class="block-title">
-                            Используемые браузеры
-                        </h3>
-                    </div>
-                    <div class="block-content block-content-full">
-                        <div class="pull-all">
-                            <!-- Lines Chart Container -->
-                            <div id="chartContainer2" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="block">
-                    <div class="block-header">
-                        <h3 class="block-title">
-                            Возрасты
-                        </h3>
-                    </div>
-                    <div class="block-content block-content-full">
-                        <div class="pull-all">
-                            <!-- Lines Chart Container -->
-                            <div id="chartContainer3" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="block">
-                    <div class="block-header">
-                        <h3 class="block-title">
-                            Регионы
-                        </h3>
-                    </div>
-                    <div class="block-content block-content-full">
-                        <div class="pull-all">
-                            <!-- Lines Chart Container -->
-                            <div id="chartContainer4" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="block">
-                    <div class="block-header">
-                        <h3 class="block-title">
-                            Пол
-                        </h3>
-                    </div>
-                    <div class="block-content block-content-full">
-                        <div class="pull-all">
-                            <!-- Lines Chart Container -->
-                            <div id="chartContainer5" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {{--<div class="row">--}}
+            {{--<div class="col-md-6">--}}
+                {{--<div class="block">--}}
+                    {{--<div class="block-header">--}}
+                        {{--<h3 class="block-title">--}}
+                            {{--Используемые браузеры--}}
+                        {{--</h3>--}}
+                    {{--</div>--}}
+                    {{--<div class="block-content block-content-full">--}}
+                        {{--<div class="pull-all">--}}
+                            {{--<!-- Lines Chart Container -->--}}
+                            {{--<div id="chartContainer2" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="col-md-6">--}}
+                {{--<div class="block">--}}
+                    {{--<div class="block-header">--}}
+                        {{--<h3 class="block-title">--}}
+                            {{--Возрасты--}}
+                        {{--</h3>--}}
+                    {{--</div>--}}
+                    {{--<div class="block-content block-content-full">--}}
+                        {{--<div class="pull-all">--}}
+                            {{--<!-- Lines Chart Container -->--}}
+                            {{--<div id="chartContainer3" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+        {{--<div class="row">--}}
+            {{--<div class="col-md-6">--}}
+                {{--<div class="block">--}}
+                    {{--<div class="block-header">--}}
+                        {{--<h3 class="block-title">--}}
+                            {{--Регионы--}}
+                        {{--</h3>--}}
+                    {{--</div>--}}
+                    {{--<div class="block-content block-content-full">--}}
+                        {{--<div class="pull-all">--}}
+                            {{--<!-- Lines Chart Container -->--}}
+                            {{--<div id="chartContainer4" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="col-md-6">--}}
+                {{--<div class="block">--}}
+                    {{--<div class="block-header">--}}
+                        {{--<h3 class="block-title">--}}
+                            {{--Пол--}}
+                        {{--</h3>--}}
+                    {{--</div>--}}
+                    {{--<div class="block-content block-content-full">--}}
+                        {{--<div class="pull-all">--}}
+                            {{--<!-- Lines Chart Container -->--}}
+                            {{--<div id="chartContainer5" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
     </div>
 
 

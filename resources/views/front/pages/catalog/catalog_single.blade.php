@@ -43,25 +43,9 @@
         </div>
     </div>
 </div>
-<div class="catalog_single_header_bg">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="catalog_single_header">
-                    <a href="\" onclick="history.back();return false;" class="catalog_single_header_back">
-                        Назад
-                    </a>
-                    <h1 class="catalog_single_header_contact">
-                        По вопросам рекламы обращайтесь по:
-                        <a href="tel:+998979994422">
-                            +998 97 999-44-22
-                        </a>
-                    </h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+
+@include('front.layouts.partials.header')
 
 <div class="catalog_single_main_bg">
     <div class="container">
@@ -91,23 +75,23 @@
             <div class="col-12 col-lg-5">
                 <div class="catalog_single_sliders_outer">
                     <div id="sync1" class="catalog_single_main_slider_main owl-carousel owl-theme">
-                        <a href="/img/catalog_single_slider_item_example.jpg"  data-fancybox="catalog_single_slider_item" data-caption="" class="catalog_single_main_slider_main_item">
-                            <img src="/img/catalog_single_slider_item_example.jpg" alt="">
+                        <a href="/img/ad-logo.jpg"  data-fancybox="catalog_single_slider_item" data-caption="" class="catalog_single_main_slider_main_item">
+                            <img src="/img/ad-logo.jpg" alt="">
                         </a>
-                        <a href="/img/catalog_single_slider_item_example.jpg"  data-fancybox="catalog_single_slider_item" data-caption="" class="catalog_single_main_slider_main_item">
-                            <img src="/img/catalog_single_slider_item_example.jpg" alt="">
+                        <a href="/img/ad-logo.jpg"  data-fancybox="catalog_single_slider_item" data-caption="" class="catalog_single_main_slider_main_item">
+                            <img src="/img/ad-logo.jpg" alt="">
                         </a>
-                        <a href="/img/catalog_single_slider_item_example.jpg"  data-fancybox="catalog_single_slider_item" data-caption="" class="catalog_single_main_slider_main_item">
-                            <img src="/img/catalog_single_slider_item_example.jpg" alt="">
+                        <a href="/img/ad-logo.jpg"  data-fancybox="catalog_single_slider_item" data-caption="" class="catalog_single_main_slider_main_item">
+                            <img src="/img/ad-logo.jpg" alt="">
                         </a>
-                        <a href="/img/catalog_single_slider_item_example.jpg"  data-fancybox="catalog_single_slider_item" data-caption="" class="catalog_single_main_slider_main_item">
-                            <img src="/img/catalog_single_slider_item_example.jpg" alt="">
+                        <a href="/img/ad-logo.jpg"  data-fancybox="catalog_single_slider_item" data-caption="" class="catalog_single_main_slider_main_item">
+                            <img src="/img/ad-logo.jpg" alt="">
                         </a>
-                        <a href="/img/catalog_single_slider_item_example.jpg"  data-fancybox="catalog_single_slider_item" data-caption="" class="catalog_single_main_slider_main_item">
-                            <img src="/img/catalog_single_slider_item_example.jpg" alt="">
+                        <a href="/img/ad-logo.jpg"  data-fancybox="catalog_single_slider_item" data-caption="" class="catalog_single_main_slider_main_item">
+                            <img src="/img/ad-logo.jpg" alt="">
                         </a>
-                        <a href="/img/catalog_single_slider_item_example.jpg"  data-fancybox="catalog_single_slider_item" data-caption="" class="catalog_single_main_slider_main_item">
-                            <img src="/img/catalog_single_slider_item_example.jpg" alt="">
+                        <a href="/img/ad-logo.jpg"  data-fancybox="catalog_single_slider_item" data-caption="" class="catalog_single_main_slider_main_item">
+                            <img src="/img/ad-logo.jpg" alt="">
                         </a>
                     </div>
                     <div class="catalog_single_main_slider_nav_outer">
@@ -118,22 +102,22 @@
                         </button>
                         <div id="sync2" class="catalog_single_main_slider_nav owl-carousel owl-theme">
                             <div class="catalog_single_main_slider_nav_item">
-                                <img src="/img/catalog_single_slider_item_example.jpg" alt="">
+                                <img src="/img/ad-logo.jpg" alt="">
                             </div>
                             <div class="catalog_single_main_slider_nav_item">
-                                <img src="/img/catalog_single_slider_item_example.jpg" alt="">
+                                <img src="/img/ad-logo.jpg" alt="">
                             </div>
                             <div class="catalog_single_main_slider_nav_item">
-                                <img src="/img/catalog_single_slider_item_example.jpg" alt="">
+                                <img src="/img/ad-logo.jpg" alt="">
                             </div>
                             <div class="catalog_single_main_slider_nav_item">
-                                <img src="/img/catalog_single_slider_item_example.jpg" alt="">
+                                <img src="/img/ad-logo.jpg" alt="">
                             </div>
                             <div class="catalog_single_main_slider_nav_item">
-                                <img src="/img/catalog_single_slider_item_example.jpg" alt="">
+                                <img src="/img/ad-logo.jpg" alt="">
                             </div>
                             <div class="catalog_single_main_slider_nav_item">
-                                <img src="/img/catalog_single_slider_item_example.jpg" alt="">
+                                <img src="/img/ad-logo.jpg" alt="">
                             </div>
                         </div>
                         <button class="catalog_single_main_slider_btn catalog_single_main_slider_btn_right">
@@ -234,39 +218,7 @@
         </div>
     </div>
 
-    <div class="catalog_single_footer_bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="catalog_single_footer">
-                        <div class="catalog_single_footer_btns">
-                            <button class="catalog_single_footer_btns_item mobile_main_links_inner_btn_contacts">
-                                Контакты
-                            </button>
-                            <a href="{{ route('home.cgu.ad') }}" class="catalog_single_footer_btns_item">
-                                Реклама в ЦГУ
-                            </a>
-                        </div>
-                        <div class="catalog_single_footer_social">
-                            <a href="#" class="catalog_single_footer_social_link">
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                            <a href="#" class="catalog_single_footer_social_link">
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                            <a href="#" class="catalog_single_footer_social_link">
-                                <i class="fa fa-telegram"></i>
-                            </a>
-                        </div>
-                        <h1 class="catalog_single_footer_copy">
-                            Создано в
-                            <a href="https://vid.uz/">VID.UZ</a>
-                        </h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    @include('front.layouts.partials.footer')
 
     <script src="{{ asset('assets/js/core/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
