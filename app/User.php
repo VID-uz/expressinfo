@@ -44,7 +44,7 @@ class User extends Authenticatable
 
     public function catalogs()
     {
-        return $this->hasMany('App\Model\Catalog', 'user_id', 'id');
+        return $this->hasMany('App\Models\Catalog', 'user_id', 'id');
     }
 
     public function monthClicks()
