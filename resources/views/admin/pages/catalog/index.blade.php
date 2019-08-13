@@ -19,6 +19,7 @@
         }
     </style>
 @endsection
+
 @section('content')
     <h2 class="content-heading">
         Все рекламодатели
@@ -86,7 +87,7 @@
                         </tbody>
                         <tfooter>
                             <tr>
-                                <td colspan="6">{{ $catalog->links() }}</td>
+                                <td colspan="6">{{ $catalog->links('vendor.pagination.pagination') }}</td>
                             </tr>
                         </tfooter>
                     </table>
@@ -139,6 +140,8 @@
                             console.log(data);
                         }
                     });
+                }else{
+                    $('.dataset ul').empty();
                 }
             });
         });

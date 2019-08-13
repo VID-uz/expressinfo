@@ -11,48 +11,48 @@ $(document).ready(function(){
     return false;
   });
 
-  $('.categories_item').on('click', function(e) {
-    if(!$(this).hasClass('disabled'))
-    {
-      $('.categories_item').not(this).removeClass('active');
-      $(this).toggleClass('active');
-      var top = $(this).position().top - $(window).scrollTop();
-      var bottom = document.documentElement.clientHeight - (top + $(this).height());
-      var left = $(this).position().left;
-      var right = document.documentElement.clientWidth - (left + $(this).width());
-      if(document.documentElement.clientHeight > document.documentElement.clientWidth)
-      {
-        if(top > bottom){
-            $(this).find('.popover').addClass('inverse');
-            $(this).find('.popover').removeClass('left');
-            $(this).find('.popover').removeClass('right');
-        }else{
-            $(this).find('.popover').removeClass('inverse');
-            $(this).find('.popover').removeClass('left');
-            $(this).find('.popover').removeClass('right');
-        }
-        if(left > right){
-            $(this).find('.popover').addClass('left');
-            $(this).find('.popover').removeClass('right');
-            $(this).find('.popover').removeClass('inverse');
-        }else{
-            $(this).find('.popover').addClass('right');
-            $(this).find('.popover').removeClass('left');
-            $(this).find('.popover').removeClass('inverse');
-        }         
-      }else{
-        if(left > right){
-            $(this).find('.popover').addClass('left');
-            $(this).find('.popover').removeClass('right');
-            $(this).find('.popover').removeClass('inverse');
-        }else{
-            $(this).find('.popover').addClass('right');
-            $(this).find('.popover').removeClass('left');
-            $(this).find('.popover').removeClass('inverse');
-        }
-      }
-    }
-  });
+  // $('.categories_item').on('click', function(e) {
+  //   if(!$(this).hasClass('disabled'))
+  //   {
+  //     $('.categories_item').not(this).removeClass('active');
+  //     $(this).toggleClass('active');
+  //     var top = $(this).position().top - $(window).scrollTop();
+  //     var bottom = document.documentElement.clientHeight - (top + $(this).height());
+  //     var left = $(this).position().left;
+  //     var right = document.documentElement.clientWidth - (left + $(this).width());
+  //     if(document.documentElement.clientHeight > document.documentElement.clientWidth)
+  //     {
+  //       if(top > bottom){
+  //           $(this).find('.popover').addClass('inverse');
+  //           $(this).find('.popover').removeClass('left');
+  //           $(this).find('.popover').removeClass('right');
+  //       }else{
+  //           $(this).find('.popover').removeClass('inverse');
+  //           $(this).find('.popover').removeClass('left');
+  //           $(this).find('.popover').removeClass('right');
+  //       }
+  //       if(left > right){
+  //           $(this).find('.popover').addClass('left');
+  //           $(this).find('.popover').removeClass('right');
+  //           $(this).find('.popover').removeClass('inverse');
+  //       }else{
+  //           $(this).find('.popover').addClass('right');
+  //           $(this).find('.popover').removeClass('left');
+  //           $(this).find('.popover').removeClass('inverse');
+  //       }
+  //     }else{
+  //       if(left > right){
+  //           $(this).find('.popover').addClass('left');
+  //           $(this).find('.popover').removeClass('right');
+  //           $(this).find('.popover').removeClass('inverse');
+  //       }else{
+  //           $(this).find('.popover').addClass('right');
+  //           $(this).find('.popover').removeClass('left');
+  //           $(this).find('.popover').removeClass('inverse');
+  //       }
+  //     }
+  //   }
+  // });
 
   $(document).on('click touchstart', function(event) {
     if (!$(event.target).closest('.categories_item').length) {

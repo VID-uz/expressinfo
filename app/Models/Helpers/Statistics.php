@@ -650,7 +650,7 @@ trait Statistics
                     $res['Fergana_ob']['num'] = 1;
                     $res['Fergana_ob']['legend'] = 'Ферганская область';
                 }
-            }
+                }
             if($val == 12)
             {
                 if(isset($res['Xorezm_ob']))

@@ -70,11 +70,11 @@
                     </svg>
                 </button>
 
-<!--                 <div class="mob_menu_button">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div> -->
+                <!--                 <div class="mob_menu_button">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div> -->
             </div>
 
             <div class="hidden_back" style="display: none;"></div>
@@ -83,7 +83,7 @@
                 <!-- <li class="nav-item">
                     <a class="nav-link active" href="/"><h5 class="m-0">Главная</h5></a>
                 </li> -->
-<!--                 <li class="nav-item">
+            <!--                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('home.categories') }}"><h5 class="m-0">Справочник</h5></a>
                 </li>
                 <li class="nav-item">
@@ -99,16 +99,16 @@
                     <a class="nav-link" href="/var3"><h5 class="m-0">Вариант 3</h5></a>
                 </li> -->
             </ul>
-<!--             <p class="main_header_number">
-                Отдел рекламы: <a href="tel:">(90) 940 36-66</a>
-            </p> -->
+            <!--             <p class="main_header_number">
+                            Отдел рекламы: <a href="tel:">(90) 940 36-66</a>
+                        </p> -->
 
             <div class="main_header_inner_buttons">
                 <button class="mobile_main_links_inner_btn_contacts">
                     Контакты
                 </button>
                 <a href="{{ route('home.cgu.ad') }}">
-                        Реклама в ЦГУ
+                    Реклама в ЦГУ
                 </a>
             </div>
         </div>

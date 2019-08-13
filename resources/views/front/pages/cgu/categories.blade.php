@@ -33,7 +33,7 @@
     <div class="container">
         <div class="block-content categories_breadcrump m-0 py-10">
 
-            <a href="#" onclick="window.history.go(-1);return false;" class="categories_back_btn">Назад</a>
+            <a href="#" onclick="window.history.back();return false;" class="categories_back_btn">Назад</a>
             <!-- <a href="http://express.vid.uz/categories" class="categories_back_btn">Назад</a> -->
 
         </div>
@@ -84,16 +84,16 @@
                                     <source src="{{ $file->getUrl() }}" type="video/mp4">
                                 </video>
                             @elseif($file->getFileType() == 'application')
-                            <a href="{{ $file->getUrl() }}" target="_blank">
-                                <div class="main_item_icon">
-                                    <img src="/img/pdf-icon.png" alt="">
-                                </div>
-                                <div class="main_item_info">
-                                    <h1 class="main_item_title" style="color: #00C3CE;font-size:12px;">
-                                        {!! $file->ru_title !!}
-                                    </h1>
-                                </div>
-                            </a>    
+                                <a href="{{ $file->getUrl() }}" target="_blank">
+                                    <div class="main_item_icon">
+                                        <img src="/img/pdf-icon.png" alt="">
+                                    </div>
+                                    <div class="main_item_info">
+                                        <h1 class="main_item_title" style="color: #00C3CE;font-size:12px;">
+                                            {!! $file->ru_title !!}
+                                        </h1>
+                                    </div>
+                                </a>
                             @endif
                         @else
                             <iframe style="width: 100%;" id="ytplayer" type="text/html"

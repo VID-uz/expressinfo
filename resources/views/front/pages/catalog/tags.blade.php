@@ -5,7 +5,7 @@
         <div class="row">
             <div class="block-content categories_breadcrump">
 
-                <a href="#" onclick="window.history.go(-1);return false;" class="categories_back_btn">Назад</a>
+                {{--                <a href="#" onclick="window.history.back();return false;" class="categories_back_btn">Назад</a>--}}
 
                 <nav class="breadcrumb push mb-0">
 

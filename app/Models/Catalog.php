@@ -107,6 +107,11 @@ class Catalog extends Model
         return $this->hasOne('App\Models\CatalogCategory', 'id', 'category_id');
     }
 
+//    public function categories()
+//    {
+//        return $this->belongsToMany('App\Models\CatalogCategory', 'catalog_category', 'catalog_id', 'category_id');
+//    }
+
     public function tags()
     {
         return $this->belongsToMany('App\Models\Tag', 'catalogs_tags', 'catalog_id', 'tag_id');

@@ -28,14 +28,24 @@
             font-size: 12px;
             text-transform: uppercase;
         }
+        .categories_item_icon img{
+            height: 146px;
+        }
     </style>
 
     <div class="container">
         <div class="block-content categories_breadcrump m-0 py-10">
 
 
-            <a href="#" onclick="window.history.go(-1);return false;" class="categories_back_btn">Назад</a>
-            <!-- <a href="http://express.vid.uz/categories" class="categories_back_btn">Назад</a> -->
+            <a href="#" onclick="window.history.back();return false;" class="categories_back_btn">Назад</a>
+
+            <nav class="breadcrumb push mb-0">
+
+                <a href="/" class="breadcrumb-item">Главная</a>
+
+                <span class="breadcrumb-item active">{{ strip_tags($category->ru_title) }}</span>
+
+            </nav>
 
         </div>
         <div class="main">
@@ -57,14 +67,14 @@
                 @endforeach
             @endif
             @if($category->hasSites())
-                @foreach($category->sites as $catalog)
-                    <a @if($catalog->video != '') href="{{ $catalog->video }}" @endif class="categories_item">
+                @foreach($category->sites()->orderBy('position', 'asc')->get() as $catalog)
+                    <a @if($catalog->video != '') href="{{ $catalog->video }}" @endif class="categories_item categories_item2">
                         <div class="categories_item_inner">
                             <div class="categories_item_icon">
-                                <img src="{{ $catalog->getImage() }}" alt="">
+                                <img src="{{ $catalog->getUrl() }}" alt="">
                             </div>
                             <div class="categories_item_info">
-                                <h1 class="categories_item_title d-sm-none d-none d-lg-block d-md-block">
+                                <h1 class="categories_item_title">
                                     {!! $catalog->ru_title !!}
                                 </h1>
                             </div>
@@ -79,22 +89,22 @@
                             <a href="{{ $file->getUrl() }}" data-fancybox="images" data-caption="" class="main_item_img">
                                 <img src="{{ $file->getUrl() }}" style="width: 100%;" alt="" style="width: 100%;">
                             </a>
-                            <p class="main_item_p">{{ $file->ru_title }}</p>
+                            <p class="main_item_p">{!! $file->ru_title !!}</p>
                         @elseif($file->getFileType() == 'video')
                             <video preload="metadata" controls style="width: 100%;" alt="" style="width: 100%;">
                                 <source src="{{ $file->getUrl() }}" type="video/mp4">
                             </video>
                         @elseif($file->getFileType() == 'application')
-                        <a href="{{ $file->getUrl() }}" target="_blank">
-                            <div class="main_item_icon">
-                                <img src="/img/pdf-icon.png" alt="">
-                            </div>
-                            <div class="main_item_info">
-                                <h1 class="main_item_title" style="color: #00C3CE;font-size:12px;">
-                                    {!! $file->ru_title !!}
-                                </h1>
-                            </div>
-                        </a>
+                            <a href="{{ $file->getUrl() }}" target="_blank">
+                                <div class="main_item_icon">
+                                    <img src="/img/pdf-icon.png" alt="">
+                                </div>
+                                <div class="main_item_info">
+                                    <h1 class="main_item_title" style="color: #00C3CE;font-size:12px;">
+                                        {!! $file->ru_title !!}
+                                    </h1>
+                                </div>
+                            </a>
                         @endif
                     @else
                         <iframe style="width: 100%;" id="ytplayer" type="text/html"
