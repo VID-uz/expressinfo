@@ -2683,7 +2683,7 @@ small{
 
 	flex-wrap: wrap;
 
-	width: calc(100% - 210px);
+	width: calc(100% - 100px);
 
 	margin: 0 0 0 5px;
 
@@ -2699,7 +2699,7 @@ small{
 
 	font-family: "Roboto-Bold";
 
-	font-size: 32px;
+	font-size: 40px;
 
 	color: #20c2cc;
 
@@ -2715,7 +2715,7 @@ small{
 
 	width: 100%;
 
-	font-size: 20px;
+	font-size: 25px;
 
 	color: #666666;
 
