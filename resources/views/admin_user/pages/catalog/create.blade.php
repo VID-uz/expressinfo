@@ -76,15 +76,15 @@
                 <div class="js-wizard-simple block">
                     <!-- Step Tabs -->
                     <ul class="nav nav-tabs nav-tabs-alt nav-fill" role="tablist">
-                        <li class="nav-item">
+                        <li class="nav-item" style="display: none;">
                             <a class="nav-link active" href="#wizard-simple2-step1" data-toggle="tab">1. Русский</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#wizard-simple2-step2" data-toggle="tab">2. Английский</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#wizard-simple2-step3" data-toggle="tab">3. Узбекский</a>
-                        </li>
+                        {{--<li class="nav-item">--}}
+                            {{--<a class="nav-link" href="#wizard-simple2-step2" data-toggle="tab">2. Английский</a>--}}
+                        {{--</li>--}}
+                        {{--<li class="nav-item">--}}
+                            {{--<a class="nav-link" href="#wizard-simple2-step3" data-toggle="tab">3. Узбекский</a>--}}
+                        {{--</li>--}}
                     </ul>
                     <!-- END Step Tabs -->
 
