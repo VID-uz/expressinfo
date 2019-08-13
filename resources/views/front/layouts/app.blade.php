@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{ asset('assets/js/plugins/select2/select2.min.css') }}?ver=1">
     <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
     <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/flat.min.css"> -->
-    <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/third_party.css') }}?ver=93">
+    <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/third_party.css') }}?ver=94">
 <!-- <link rel="stylesheet" href="{{ asset('css/steps.css')}}"> -->
     <style>
         fadethis{
