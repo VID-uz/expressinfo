@@ -19,7 +19,7 @@
     <link rel="stylesheet" id="css-main" href="{{ asset('css/jquery.fancybox.min.css') }}">
     <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/owl.theme.default.min.css') }}">
     <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/third_party.css') }}?ver=8">
+    <link rel="stylesheet" href="{{ asset('assets/css/third_party.css') }}?ver=10">
 </head>
 <body>
 <div class="contacts_popup" id="contacts_popup" style="display: none;">
@@ -64,7 +64,7 @@
                     </h1>
                     <div class="catalog_single_main_info_list">
                         <a href="tel:{{ $item->phone_number }}" class="catalog_single_main_info_list_item">
-                            <i class="fa fa-phone fa-2x"></i>{{ $item->phone_number }}
+                            {{--<i class="fa fa-phone fa-2x"></i>--}}{{ $item->phone_number }}
                         </a>
                         {{--<a href="{{ $item->url }}" class="catalog_single_main_info_list_item">--}}
                             {{--<i class="fa fa-link fa-2x"></i>{{ $item->url }}--}}
