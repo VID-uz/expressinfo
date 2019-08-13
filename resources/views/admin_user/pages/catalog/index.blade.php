@@ -11,9 +11,6 @@
         <div class="col-md-12"><div class="block">
                 <div class="block-header block-header-default">
                     <h3 class="block-title">Пользователи</h3>
-                    <a href="{{ route('catalog.create') }}" class="btn btn-primary">
-                        Создать
-                    </a>
                 </div>
                 <div class="block-content">
                     <table id="dataTable" class="table table-striped table-vcenter">
