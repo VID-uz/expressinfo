@@ -101,16 +101,16 @@
                     {{ Auth::user()->name }}<i class="fa fa-angle-down ml-5"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right min-width-150" aria-labelledby="page-header-user-dropdown">
-                    <a class="dropdown-item" href="{{ route('users.edit', Auth::user()->id) }}">
-                        <i class="si si-user mr-5"></i> Профиль
-                    </a>
+                    {{--<a class="dropdown-item" href="{{ route('users.edit', Auth::user()->id) }}">--}}
+                        {{--<i class="si si-user mr-5"></i> Профиль--}}
+                    {{--</a>--}}
                     <div class="dropdown-divider"></div>
 
                     <!-- Toggle Side Overlay -->
                     <!-- Layout API, functionality initialized in Codebase() -> uiApiLayout() -->
-                    <a class="dropdown-item" href="javascript:void(0)" data-toggle="layout" data-action="side_overlay_toggle">
-                        <i class="si si-wrench mr-5"></i> Настройки
-                    </a>
+                    {{--<a class="dropdown-item" href="javascript:void(0)" data-toggle="layout" data-action="side_overlay_toggle">--}}
+                        {{--<i class="si si-wrench mr-5"></i> Настройки--}}
+                    {{--</a>--}}
                     <!-- END Side Overlay -->
 
                     <div class="dropdown-divider"></div>
