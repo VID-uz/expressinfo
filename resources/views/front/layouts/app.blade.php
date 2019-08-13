@@ -319,40 +319,40 @@
 
 </script>
 <script>
-    @if(Cookie::get('questionare') != null)
-        window.onload = function() {
+    {{--@if(Cookie::get('questionare') != null)--}}
+        {{--window.onload = function() {--}}
 
-            $('.contacts_popup2').attr('style', 'display: block; z-index: 13;');
-            $('.contacts_popup_outer').attr('style', 'display:block;position: fixed;top:0;right: 0;bottom: 0;left: 0;z-index: 20;height: auto;');
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                type: 'POST',
-                url: '/check_cookie',
-                dataType: 'json',
-                success: function(data){
-                    if(data.questionare)
-                    {
-                        //$('.contacts_popup2').attr('style', 'display: none; z-index: 13;');
-                        //$('.contacts_popup_outer').attr('style', 'display:none;position: fixed;top:0;right: 0;bottom: 0;left: 0;z-index: 20;height: auto;');
-                    }else{
-                        console.log('not exists');
-                        $('.contacts_popup2').attr('style', 'display: block; z-index: 13;');
-                        $('.contacts_popup_outer').attr('style', 'display:block;position: fixed;top:0;right: 0;bottom: 0;left: 0;z-index: 20;height: auto;');
-                    }
-                },
-                error: function (data) {
-                    console.log(data.response);
-                }
-            });
+            {{--$('.contacts_popup2').attr('style', 'display: block; z-index: 13;');--}}
+            {{--$('.contacts_popup_outer').attr('style', 'display:block;position: fixed;top:0;right: 0;bottom: 0;left: 0;z-index: 20;height: auto;');--}}
+            {{--$.ajaxSetup({--}}
+                {{--headers: {--}}
+                    {{--'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')--}}
+                {{--}--}}
+            {{--});--}}
+            {{--$.ajax({--}}
+                {{--type: 'POST',--}}
+                {{--url: '/check_cookie',--}}
+                {{--dataType: 'json',--}}
+                {{--success: function(data){--}}
+                    {{--if(data.questionare)--}}
+                    {{--{--}}
+                        {{--//$('.contacts_popup2').attr('style', 'display: none; z-index: 13;');--}}
+                        {{--//$('.contacts_popup_outer').attr('style', 'display:none;position: fixed;top:0;right: 0;bottom: 0;left: 0;z-index: 20;height: auto;');--}}
+                    {{--}else{--}}
+                        {{--console.log('not exists');--}}
+                        {{--$('.contacts_popup2').attr('style', 'display: block; z-index: 13;');--}}
+                        {{--$('.contacts_popup_outer').attr('style', 'display:block;position: fixed;top:0;right: 0;bottom: 0;left: 0;z-index: 20;height: auto;');--}}
+                    {{--}--}}
+                {{--},--}}
+                {{--error: function (data) {--}}
+                    {{--console.log(data.response);--}}
+                {{--}--}}
+            {{--});--}}
 
 
-        };
-        window.onunload = function(){};
-    @endif
+        {{--};--}}
+        {{--window.onunload = function(){};--}}
+    {{--@endif--}}
     $(function(){
         var settings = {
             stepsContainerTag: 'fadeThis',
