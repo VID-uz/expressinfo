@@ -6,7 +6,7 @@
  * Time: 10:39
  */
 
-Route::middleware('admin.user')->prefix('customer')->namespace('User')->group(function (){
+Route::middleware('admin.user')->prefix('customer')->namespace('Customer')->group(function (){
 
     Route::get('/', 'DashboardController@dashboard')->name('admin.user.index');
 
