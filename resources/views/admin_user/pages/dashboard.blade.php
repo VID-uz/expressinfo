@@ -54,145 +54,145 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <!-- Pie Chart -->
-                <div class="block" style="height: 98%;">
-                    <div class="block-header block-header-default">
-                        <h3 class="block-title">Социальный статус</h3>
-                        <div class="block-options">
-                            <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
-                                <i class="si si-refresh"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="block-content block-content-full text-center">
-                        <div class="row justify-content-center">
-                            <div class="col-md-8">
-                                <!-- Pie Chart Container -->
-                                <canvas class="js-chartjs-pie6"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END Pie Chart -->
-            </div>
+            {{--<div class="col-md-6">--}}
+                {{--<!-- Pie Chart -->--}}
+                {{--<div class="block" style="height: 98%;">--}}
+                    {{--<div class="block-header block-header-default">--}}
+                        {{--<h3 class="block-title">Социальный статус</h3>--}}
+                        {{--<div class="block-options">--}}
+                            {{--<button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">--}}
+                                {{--<i class="si si-refresh"></i>--}}
+                            {{--</button>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="block-content block-content-full text-center">--}}
+                        {{--<div class="row justify-content-center">--}}
+                            {{--<div class="col-md-8">--}}
+                                {{--<!-- Pie Chart Container -->--}}
+                                {{--<canvas class="js-chartjs-pie6"></canvas>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<!-- END Pie Chart -->--}}
+            {{--</div>--}}
         </div>
-        <div class="row">
-            <div class="col-md-6">
-                <!-- Pie Chart -->
-                <div class="block" style="height: 98%;">
-                    <div class="block-header block-header-default">
-                        <h3 class="block-title">Возраст</h3>
-                        <div class="block-options">
-                            <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
-                                <i class="si si-refresh"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="block-content block-content-full text-center">
-                        <div class="row justify-content-center">
-                            <div class="col-md-8">
-                                <!-- Pie Chart Container -->
-                                <canvas class="js-chartjs-pie"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END Pie Chart -->
-            </div>
-            <div class="col-md-6">
-                <!-- Pie Chart -->
-                <div class="block" style="height: 98%;">
-                    <div class="block-header block-header-default">
-                        <h3 class="block-title">Регион</h3>
-                        <div class="block-options">
-                            <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
-                                <i class="si si-refresh"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="block-content block-content-full text-center">
-                        <div class="row justify-content-center">
-                            <div class="col-md-8">
-                                <!-- Pie Chart Container -->
-                                <canvas class="js-chartjs-pie2"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END Pie Chart -->
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <!-- Pie Chart -->
-                <div class="block" style="height: 98%;">
-                    <div class="block-header block-header-default">
-                        <h3 class="block-title">Пол</h3>
-                        <div class="block-options">
-                            <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
-                                <i class="si si-refresh"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="block-content block-content-full text-center">
-                        <div class="row justify-content-center">
-                            <div class="col-md-8">
-                                <!-- Pie Chart Container -->
-                                <canvas class="js-chartjs-pie3"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END Pie Chart -->
-            </div>
-            <div class="col-md-6">
-                <!-- Pie Chart -->
-                <div class="block" style="height: 98%;">
-                    <div class="block-header block-header-default">
-                        <h3 class="block-title">Браузеры</h3>
-                        <div class="block-options">
-                            <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
-                                <i class="si si-refresh"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="block-content block-content-full text-center">
-                        <div class="row justify-content-center">
-                            <div class="col-md-8">
-                                <!-- Pie Chart Container -->
-                                <canvas class="js-chartjs-pie4"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END Pie Chart -->
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <!-- Pie Chart -->
-                <div class="block" style="height: 98%;">
-                    <div class="block-header block-header-default">
-                        <h3 class="block-title">Операционные системы</h3>
-                        <div class="block-options">
-                            <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
-                                <i class="si si-refresh"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="block-content block-content-full text-center">
-                        <div class="row justify-content-center">
-                            <div class="col-md-8">
-                                <!-- Pie Chart Container -->
-                                <canvas class="js-chartjs-pie5"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END Pie Chart -->
-            </div>
-        </div>
+        {{--<div class="row">--}}
+            {{--<div class="col-md-6">--}}
+                {{--<!-- Pie Chart -->--}}
+                {{--<div class="block" style="height: 98%;">--}}
+                    {{--<div class="block-header block-header-default">--}}
+                        {{--<h3 class="block-title">Возраст</h3>--}}
+                        {{--<div class="block-options">--}}
+                            {{--<button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">--}}
+                                {{--<i class="si si-refresh"></i>--}}
+                            {{--</button>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="block-content block-content-full text-center">--}}
+                        {{--<div class="row justify-content-center">--}}
+                            {{--<div class="col-md-8">--}}
+                                {{--<!-- Pie Chart Container -->--}}
+                                {{--<canvas class="js-chartjs-pie"></canvas>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<!-- END Pie Chart -->--}}
+            {{--</div>--}}
+            {{--<div class="col-md-6">--}}
+                {{--<!-- Pie Chart -->--}}
+                {{--<div class="block" style="height: 98%;">--}}
+                    {{--<div class="block-header block-header-default">--}}
+                        {{--<h3 class="block-title">Регион</h3>--}}
+                        {{--<div class="block-options">--}}
+                            {{--<button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">--}}
+                                {{--<i class="si si-refresh"></i>--}}
+                            {{--</button>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="block-content block-content-full text-center">--}}
+                        {{--<div class="row justify-content-center">--}}
+                            {{--<div class="col-md-8">--}}
+                                {{--<!-- Pie Chart Container -->--}}
+                                {{--<canvas class="js-chartjs-pie2"></canvas>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<!-- END Pie Chart -->--}}
+            {{--</div>--}}
+        {{--</div>--}}
+        {{--<div class="row">--}}
+            {{--<div class="col-md-6">--}}
+                {{--<!-- Pie Chart -->--}}
+                {{--<div class="block" style="height: 98%;">--}}
+                    {{--<div class="block-header block-header-default">--}}
+                        {{--<h3 class="block-title">Пол</h3>--}}
+                        {{--<div class="block-options">--}}
+                            {{--<button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">--}}
+                                {{--<i class="si si-refresh"></i>--}}
+                            {{--</button>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="block-content block-content-full text-center">--}}
+                        {{--<div class="row justify-content-center">--}}
+                            {{--<div class="col-md-8">--}}
+                                {{--<!-- Pie Chart Container -->--}}
+                                {{--<canvas class="js-chartjs-pie3"></canvas>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<!-- END Pie Chart -->--}}
+            {{--</div>--}}
+            {{--<div class="col-md-6">--}}
+                {{--<!-- Pie Chart -->--}}
+                {{--<div class="block" style="height: 98%;">--}}
+                    {{--<div class="block-header block-header-default">--}}
+                        {{--<h3 class="block-title">Браузеры</h3>--}}
+                        {{--<div class="block-options">--}}
+                            {{--<button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">--}}
+                                {{--<i class="si si-refresh"></i>--}}
+                            {{--</button>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="block-content block-content-full text-center">--}}
+                        {{--<div class="row justify-content-center">--}}
+                            {{--<div class="col-md-8">--}}
+                                {{--<!-- Pie Chart Container -->--}}
+                                {{--<canvas class="js-chartjs-pie4"></canvas>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<!-- END Pie Chart -->--}}
+            {{--</div>--}}
+        {{--</div>--}}
+        {{--<div class="row">--}}
+            {{--<div class="col-md-6">--}}
+                {{--<!-- Pie Chart -->--}}
+                {{--<div class="block" style="height: 98%;">--}}
+                    {{--<div class="block-header block-header-default">--}}
+                        {{--<h3 class="block-title">Операционные системы</h3>--}}
+                        {{--<div class="block-options">--}}
+                            {{--<button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">--}}
+                                {{--<i class="si si-refresh"></i>--}}
+                            {{--</button>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="block-content block-content-full text-center">--}}
+                        {{--<div class="row justify-content-center">--}}
+                            {{--<div class="col-md-8">--}}
+                                {{--<!-- Pie Chart Container -->--}}
+                                {{--<canvas class="js-chartjs-pie5"></canvas>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<!-- END Pie Chart -->--}}
+            {{--</div>--}}
+        {{--</div>--}}
     </div>
 
 

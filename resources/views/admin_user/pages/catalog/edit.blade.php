@@ -145,18 +145,20 @@
                                 <label for="wizard-simple2-lastname">Ссылка на страницу</label>
                             </div>
                         </div>
+                        @if(Auth::user()->isAdmin)
                         <div class="form-material floating">
-                            <select class="form-control" id="material-select2" name="parent_id[]" multiple>
+                            <select class="form-control select2" name="parent_id">
                                 <option value="0">-- нет --</option>
                                 @foreach($categories as $category_list)
-                                    <option value="{{ $category_list->id }}" @if(in_array($category_list->id, $categories_id)) selected @endif @if($category_list->hasChildren()) disabled @endif>{{ $category_list->ru_title }}</option>
+                                    <option value="{{ $category_list->id }}" @if($category_list->id == $item->category_id) selected @endif @if($category_list->hasChildren()) disabled @endif>{{ $category_list->ru_title }}</option>
                                     @if($category_list->hasChildren())
-                                        @include('admin.pages.catalog.components.categories', ['dilimiter' => '---'])
+                                        @include('admin_user.pages.catalog.components.categories', ['dilimiter' => '---'])
                                     @endif
                                 @endforeach
                             </select>
                             <label for="material-select2">Категория</label>
                         </div>
+                        @endif
                         <div class="form-group">
                             <label for="">Изображение</label>
                             @if($item->image != null)
@@ -210,6 +212,7 @@
         $(document).ready(function(){
             var editor = CKEDITOR.replaceAll();
             CKFinder.setupCKEditor( editor );
+            $('.select2').select2();
         })
         $('.input_file__input').change(function (e) {
             $('.select').text(e.target.files[0].name);

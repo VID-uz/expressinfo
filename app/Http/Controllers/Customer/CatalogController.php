@@ -84,11 +84,10 @@ class CatalogController extends Controller
     {
         $item = Catalog::find($id);
         $categories = CatalogCategory::where('parent_id', 0)->get();
-        $categories_id = $item->categories()->pluck('category_id')->toArray();
         $users = User::all();
 
         return view('admin_user.pages.catalog.edit', compact(
-            'item', 'categories_id', 'categories', 'users'
+            'item', 'categories', 'users'
         ));
     }
 
@@ -110,10 +109,6 @@ class CatalogController extends Controller
         $item = Catalog::find($id);
         $item->update($request->all());
         $item->uploadImage($request->file('image'));
-        $item->categories()->detach();
-        if($request->get('parent_id') != null) :
-            $item->categories()->attach($request->get('parent_id'));
-        endif;
 
         return redirect()->route('ads.index');
     }
