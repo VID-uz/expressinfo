@@ -9,10 +9,10 @@
 namespace App\Models\Helpers;
 
 
+use Illuminate\Support\Carbon;
+
 trait Statistics
 {
-
-
 
     public function getMonthClicks()
     {
