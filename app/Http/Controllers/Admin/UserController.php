@@ -48,6 +48,7 @@ class UserController extends Controller
 
         $user = User::create($request->all());
         $user->uploadImage($request->file('image'));
+        $user->savePassword($request->get('password'));
 
         return redirect()->route('users.index', [
             'list_id' => $request->get('list_id')
