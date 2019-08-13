@@ -104,7 +104,7 @@
                     {{--<a class="dropdown-item" href="{{ route('users.edit', Auth::user()->id) }}">--}}
                         {{--<i class="si si-user mr-5"></i> Профиль--}}
                     {{--</a>--}}
-                    <div class="dropdown-divider"></div>
+                    {{--<div class="dropdown-divider"></div>--}}
 
                     <!-- Toggle Side Overlay -->
                     <!-- Layout API, functionality initialized in Codebase() -> uiApiLayout() -->
@@ -113,7 +113,7 @@
                     {{--</a>--}}
                     <!-- END Side Overlay -->
 
-                    <div class="dropdown-divider"></div>
+                    {{--<div class="dropdown-divider"></div>--}}
                     <form action="{{ route('logout') }}" method="post">
                         @csrf
                         <button class="dropdown-item" href="op_auth_signin.html">
