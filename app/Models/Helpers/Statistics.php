@@ -10,6 +10,7 @@ namespace App\Models\Helpers;
 
 
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 
 trait Statistics
 {
