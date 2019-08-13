@@ -2,6 +2,11 @@
 
 @section('css')
     <link rel="stylesheet" type="text/css" href="/datatables/datatables.min.css"/>
+    <style>
+        .fa-pencil{
+            padding-top: 8px;
+        }
+    </style>
 @endsection
 @section('content')
     <h2 class="content-heading">
