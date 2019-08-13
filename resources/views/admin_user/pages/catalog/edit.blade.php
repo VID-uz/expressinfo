@@ -56,7 +56,7 @@
 
 @section('content')
     <!-- Material Design -->
-    <h2 class="content-heading">Создание</h2>
+    <h2 class="content-heading">Редактирование</h2>
     @if($errors->any())
         <div class="row">
             <div class="col-md-12 mb-3">
