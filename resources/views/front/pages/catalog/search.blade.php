@@ -37,18 +37,24 @@
                     </div>
                 @else
                     @foreach($result as $catalog)
-                        <a  href="{{ (($catalog->url != '' || $catalog->url != null) && $catalog->active) ? route('home.redirect', ['id' => $catalog->id]) : '#' }}" class="categories_item @if(!$catalog->active) disabled @endif">
+                        @if($catalog->image != null)
+                            <a  href="{{ (($catalog->url != '' || $catalog->url != null) && $catalog->active) ? route('home.redirect', ['id' => $catalog->id]) : '#' }}" class="categories_item @if(!$catalog->active) disabled @endif">
+                        @else
+                            <a href="{{ route('home.catalog.single', $catalog->id) }}" class="categories_item @if(!$catalog->active) disabled @endif">
+                        @endif
                             <div class="categories_item_inner">
+                                @if($catalog->image != null)
                                 <div class="categories_item_icon">
-                                @if(($catalog->url != '' || $catalog->url != null) && $catalog->active)
-                                    <!-- <a href="{{ route('home.redirect', ['id' => $catalog->id]) }}"> -->
+                                    @if(($catalog->url != '' || $catalog->url != null) && $catalog->active)
+                                        <!-- <a href="{{ route('home.redirect', ['id' => $catalog->id]) }}"> -->
                                     @endif
                                     <img src="{{ $catalog->getImage() }}" alt="">
                                     @if($catalog->url != '' || $catalog->url != null)
                                     <!-- </a> -->
                                     @endif
                                 </div>
-                                <div class="categories_item_info">
+                                @endif
+                                <div class="categories_item_info" @if($catalog->image == null) style="display: block !important;" @endif>
                                 @if(($catalog->url != '' || $catalog->url != null) && $catalog->active)
                                     <!-- <a href="{{ route('home.redirect', ['id' => $catalog->id]) }}"> -->
                                     @endif

@@ -319,7 +319,7 @@
 
 </script>
 <script>
-    @if(Cookie::get('questionare') == null)
+    @if(Cookie::get('questionare') != null)
         window.onload = function() {
 
             $('.contacts_popup2').attr('style', 'display: block; z-index: 13;');
