@@ -5,7 +5,6 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 	<title>ExpressInfo</title>
-	<meta name="robots" content="noindex, nofollow">
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 
 
@@ -118,7 +117,7 @@
 					<div class="mobile_main_item_outer">
 						<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="174" height="200" viewbox="0 0 173.20508075688772 200"><path fill="#20C2CC" d="M77.94228634059948 4.999999999999999Q86.60254037844386 0 95.26279441628824 4.999999999999999L164.54482671904333 45Q173.20508075688772 50 173.20508075688772 60L173.20508075688772 140Q173.20508075688772 150 164.54482671904333 155L95.26279441628824 195Q86.60254037844386 200 77.94228634059948 195L8.660254037844387 155Q0 150 0 140L0 60Q0 50 8.660254037844387 45Z"></path></svg>
 						<div class="mobile_main_item_inner">
-							<a href="http://davxizmat.uz" class="mobile_main_item_inner_link">
+							<a href="http://www.davxizmat.uz/" class="mobile_main_item_inner_link">
 								<img src="/uploads/mobile_item_logo_2.png" alt="" class="mobile_main_item_icon">
 							</a>
 						</div>
@@ -128,7 +127,7 @@
 					<div class="mobile_main_item_outer">
 						<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="174" height="200" viewbox="0 0 173.20508075688772 200"><path fill="#FF9800" d="M77.94228634059948 4.999999999999999Q86.60254037844386 0 95.26279441628824 4.999999999999999L164.54482671904333 45Q173.20508075688772 50 173.20508075688772 60L173.20508075688772 140Q173.20508075688772 150 164.54482671904333 155L95.26279441628824 195Q86.60254037844386 200 77.94228634059948 195L8.660254037844387 155Q0 150 0 140L0 60Q0 50 8.660254037844387 45Z"></path></svg>
 						<div class="mobile_main_item_inner">
-							<a href="https://my.gov.uz/ru" class="mobile_main_item_inner_link">
+							<a href="http://publicservice.uz/cgu_info/42" class="mobile_main_item_inner_link">
 								<img src="/uploads/mobile_item_logo_3.png" alt="" class="mobile_main_item_icon">
 							</a>
 						</div>
