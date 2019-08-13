@@ -36,7 +36,7 @@
                                 </td>
                                 <td class="font-w600">{{ strip_tags($item->ru_title) }}</td>
                                 <td class="d-none d-sm-table-cell">{{ $item->getClickCount() }}</td>
-                                <td class="d-none d-sm-table-cell">{{ strip_tags($item->categories->pluck('ru_title')->implode(', ')) }}</td>
+                                <td class="d-none d-sm-table-cell">{{ ($item->category != null) ? strip_tags($item->categories->ru_title) : '' }}</td>
                                 <td class="text-center">
                                     <div class="btn-group">
                                         <a href="{{ route('ads.edit', [$item->id, 'list_id' => intval($i/10)]) }}" class="btn btn-sm btn-secondary">
