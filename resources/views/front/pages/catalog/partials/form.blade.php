@@ -1,4 +1,4 @@
-<form class="main_form" action="{{ route('home.search') }}" method="POST" enctype="multipart/form-data" style="width: 100%;">
+<form class="main_form" action="{{ route('home.search') }}" method="POST" enctype="multipart/form-data" style="width: 100%;@if(isset($margin))margin: 0;@endif">
     @csrf
     <div class="main_form_inner">
         <div class="main_input main_input_search categories_input_search">

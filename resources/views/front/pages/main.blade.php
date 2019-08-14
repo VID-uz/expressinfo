@@ -32,11 +32,11 @@
 	</script>
 	<style>
 		.mobile_main_item_outer svg{
-			filter: drop-shadow(#4c4949 0px 29px 21px);
+			filter: drop-shadow(#4c4949 0px 6px 8px);
 		}
 		.mobile_main_item_outer:hover > svg{
-			transition: 0.5s;
-			filter: drop-shadow(#4c4949 0px 0px 15px) contrast(150%);
+			transition: 0.8s;
+			filter: drop-shadow(#4c4949 0px 18px 19px) contrast(150%);
 		}
 	</style>
 	<noscript><div><img src="https://mc.yandex.ru/watch/54773344" style="position:absolute; left:-9999px;" alt="" /></div></noscript>

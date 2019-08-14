@@ -32,65 +32,65 @@
                         <div class="categories_item @if(!$catalog->active) disabled @endif">
                             @if($catalog->image != null)
                                 <a href="{{ (($catalog->url != '' || $catalog->url != null) && $catalog->active) ? route('home.redirect', ['id' => $catalog->id]) : '#' }}" class="categories_item_inner">
-                            @else
-                                    <a href="{{ route('home.catalog.single', $catalog->id) }}" class="categories_item_inner @if(!$catalog->active) disabled @endif">
-                            @endif
-                                @if($catalog->image != null)
-                                    <div class="categories_item_icon">
-                                        @if(($catalog->url != '' || $catalog->url != null) && $catalog->active)
-                                        <!-- <a href="{{ route('home.redirect', ['id' => $catalog->id]) }}"> -->
-                                        @endif
-                                        <img src="{{ $catalog->getImage() }}" alt="">
-                                        @if($catalog->url != '' || $catalog->url != null)
-                                        <!-- </a> -->
-                                        @endif
-                                    </div>
-                                @endif
-                                <div class="categories_item_info" @if($catalog->image == null) style="display: block !important;" @endif>
-                                @if(($catalog->url != '' || $catalog->url != null) && $catalog->active)
-                                    <!-- <a href="{{ route('home.redirect', ['id' => $catalog->id]) }}"> -->
-                                    @endif
-                                    <h1 class="categories_item_title">
-                                        <?php $exploded = explode(' ', strtolower($catalog->ru_title)); ?>
-                                        <?php foreach ($exploded as $key) {
-                                            $exploded2[] = ucfirst($key);
-                                        } ?>
-                                        {{ $catalog->ru_title }}
-                                    </h1>
-                                    @if($catalog->url != '' || $catalog->url != null)
-                                    <!-- </a> -->
-                                    @endif
-                                </div>
-                            </a>
-                            <fieldset class="popover">
-                                @if(($catalog->url != '' || $catalog->url != null) && $catalog->active)
-                                    <a href="{{ route('home.redirect', ['id' => $catalog->id]) }}" class="categories_popover_link">
-                                        <i class="fa fa-link"></i>Перейти на сайт
-                                @else
-                                    <a href="#" class="categories_popover_link">
-                                        <i class="fa fa-link"></i>Нет ссылки
-                                @endif
-                                    </a>
-                                    <hr>
-                                @if($catalog->phone_number != '' && $catalog->active)
-                                    <a href="tel: {{ $catalog->phone_number }}" class="categories_popover_link">
-                                        <i class="fa fa-phone"></i>{{ $catalog->phone_number }}
-                                @else
-                                    <a href="javascript::void(0)" class="categories_popover_link">
-                                        <i class="fa fa-phone"></i>Нет номера
-                                @endif
-                                    </a>
-                                @if($catalog->url != '' && $catalog->active)
-                                    <hr>
-                                    <a href="javascript::void(0)" class="categories_popover_link">
-                                        <i class="fa fa-eye"></i> Просмотры: {{ $catalog->getClickCount() }}
-                                    </a>
-                                @endif
-                                                    <!--                             <hr>
+                                    @else
+                                        <a href="{{ route('home.catalog.single', $catalog->id) }}" class="categories_item_inner categories_item_inner_new @if(!$catalog->active) disabled @endif">
+                                            @endif
+                                            @if($catalog->image != null)
+                                                <div class="categories_item_icon">
+                                                @if(($catalog->url != '' || $catalog->url != null) && $catalog->active)
+                                                    <!-- <a href="{{ route('home.redirect', ['id' => $catalog->id]) }}"> -->
+                                                    @endif
+                                                    <img src="{{ $catalog->getImage() }}" alt="">
+                                                    @if($catalog->url != '' || $catalog->url != null)
+                                                    <!-- </a> -->
+                                                    @endif
+                                                </div>
+                                            @endif
+                                            <div class="categories_item_info" @if($catalog->image == null) style="display: block !important;" @endif>
+                                            @if(($catalog->url != '' || $catalog->url != null) && $catalog->active)
+                                                <!-- <a href="{{ route('home.redirect', ['id' => $catalog->id]) }}"> -->
+                                                @endif
+                                                <h1 class="categories_item_title">
+                                                    <?php $exploded = explode(' ', strtolower($catalog->ru_title)); ?>
+                                                    <?php foreach ($exploded as $key) {
+                                                        $exploded2[] = ucfirst($key);
+                                                    } ?>
+                                                    {{ $catalog->ru_title }}
+                                                </h1>
+                                                @if($catalog->url != '' || $catalog->url != null)
+                                                <!-- </a> -->
+                                                @endif
+                                            </div>
+                                        </a>
+                                        <fieldset class="popover">
+                                            @if(($catalog->url != '' || $catalog->url != null) && $catalog->active)
+                                                <a href="{{ route('home.redirect', ['id' => $catalog->id]) }}" class="categories_popover_link">
+                                                    <i class="fa fa-link"></i>Перейти на сайт
+                                                    @else
+                                                        <a href="#" class="categories_popover_link">
+                                                            <i class="fa fa-link"></i>Нет ссылки
+                                                            @endif
+                                                        </a>
+                                                        <hr>
+                                                        @if($catalog->phone_number != '' && $catalog->active)
+                                                            <a href="tel: {{ $catalog->phone_number }}" class="categories_popover_link">
+                                                                <i class="fa fa-phone"></i>{{ $catalog->phone_number }}
+                                                                @else
+                                                                    <a href="javascript::void(0)" class="categories_popover_link">
+                                                                        <i class="fa fa-phone"></i>Нет номера
+                                                                        @endif
+                                                                    </a>
+                                                                    @if($catalog->url != '' && $catalog->active)
+                                                                        <hr>
+                                                                        <a href="javascript::void(0)" class="categories_popover_link">
+                                                                            <i class="fa fa-eye"></i> Просмотры: {{ $catalog->getClickCount() }}
+                                                                        </a>
+                                                                @endif
+                                                                <!--                             <hr>
                             <a href="{{ route('home.catalog.single', $catalog->id) }}" class="categories_popover_link categories_popover_link_btn">
                                 Подробно
                             </a> -->
-                            </fieldset>
+                                        </fieldset>
                         </div>
                     @endforeach
                     @foreach($catalogs['not'] as $catalog)
@@ -99,20 +99,20 @@
                                 <div class="categories_item_icon">
                                 @if(($catalog->url != '' || $catalog->url != null) && $catalog->active)
                                     <!-- <a href="{{ route('home.redirect', ['id' => $catalog->id]) }}"> -->
-                                @endif
+                                    @endif
                                     <img src="{{ $catalog->getImage() }}" alt="">
-                                @if($catalog->url != '' || $catalog->url != null)
+                                    @if($catalog->url != '' || $catalog->url != null)
                                     <!-- </a> -->
-                                @endif
+                                    @endif
                                 </div>
                                 <div class="categories_item_info">
                                 @if(($catalog->url != '' || $catalog->url != null) && $catalog->active)
                                     <!-- <a href="{{ route('home.redirect', ['id' => $catalog->id]) }}"> -->
-                                @endif
+                                    @endif
                                     <h1 class="categories_item_title d-sm-none d-none d-lg-block d-md-block">{{ $catalog->ru_title }}</h1>
-                                @if($catalog->url != '' || $catalog->url != null)
+                                    @if($catalog->url != '' || $catalog->url != null)
                                     <!-- </a> -->
-                                @endif
+                                    @endif
                                 </div>
                             </div>
                             <fieldset class="popover">
@@ -128,17 +128,17 @@
                                             @if($catalog->phone_number != '' && $catalog->active)
                                                 <a href="tel: {{ $catalog->phone_number }}" class="categories_popover_link">
                                                     <i class="fa fa-phone"></i>{{ $catalog->phone_number }}
-                                            @else
-                                                <a href="#" class="categories_popover_link">
-                                                    <i class="fa fa-phone"></i>Нет номера
-                                            @endif
-                                                </a>
-                                            @if($catalog->url != '' && $catalog->active)
-                                                <hr>
-                                                <a href="javascript::void(0)" class="categories_popover_link">
-                                                    <i class="fa fa-eye"></i> Просмотры: {{ $catalog->getClickCount() }}
-                                                </a>
-                                            @endif
+                                                    @else
+                                                        <a href="#" class="categories_popover_link">
+                                                            <i class="fa fa-phone"></i>Нет номера
+                                                            @endif
+                                                        </a>
+                                                        @if($catalog->url != '' && $catalog->active)
+                                                            <hr>
+                                                            <a href="javascript::void(0)" class="categories_popover_link">
+                                                                <i class="fa fa-eye"></i> Просмотры: {{ $catalog->getClickCount() }}
+                                                            </a>
+                                                    @endif
                                                     <!--                             <hr>
                             <a href="{{ route('home.catalog.single', $catalog->id) }}" class="categories_popover_link categories_popover_link_btn">
                                 Подробно

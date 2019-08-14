@@ -19,8 +19,7 @@
     <link rel="stylesheet" id="css-main" href="{{ asset('css/jquery.fancybox.min.css') }}">
     <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/owl.theme.default.min.css') }}">
     <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/owl.carousel.min.css') }}">
-
-    <link rel="stylesheet" href="{{ asset('assets/css/third_party.css') }}?ver=11">
+    <link rel="stylesheet" href="{{ asset('assets/css/third_party.css') }}?ver=5">
 </head>
 <body>
 <div class="contacts_popup" id="contacts_popup" style="display: none;">
@@ -45,32 +44,58 @@
     </div>
 </div>
 
-
 @include('front.layouts.partials.header')
 
 <div class="catalog_single_main_bg">
     <div class="container">
         <div class="row catalog_single_main">
+            @include('front.pages.catalog.partials.form', ['margin' => true])
+            <div class="block-content categories_breadcrump" style="margin-bottom: 40px;">
+
+                <a href="#" onclick="window.history.back();return false;" class="categories_back_btn">Назад</a>
+
+                <nav class="breadcrumb push mb-0">
+
+                    <a class="breadcrumb-item" href="/categories">Главная</a>
+
+                    @if($item->category->hasChildren())
+                        @if(count($item->category->children) > 2)
+                            <a href="{{ route('home.category', $item->category->id) }}" class="breadcrumb-item">{{ strip_tags($item->category->ru_title) }}</a>
+                        @else
+                            <a href="{{ route('home.catalog', $item->category->id) }}" class="breadcrumb-item">{{ strip_tags($item->category->ru_title) }}</a>
+                        @endif
+                    @else
+                        <a href="{{ route('home.catalog', $item->category->id) }}" class="breadcrumb-item">{{ strip_tags($item->category->ru_title) }}</a>
+                    @endif
+
+                    <span class="breadcrumb-item active">{{ strip_tags($item->ru_title) }}</span>
+
+
+                </nav>
+
+            </div>
             <div class="col-12 col-lg-7 catalog_single_main_inner" style="margin-bottom: auto;">
-                {{--<div class="catalog_single_main_logo">--}}
-                    {{--<img src="{{ $item->getImage() }}" alt="">--}}
-                {{--</div>--}}
+                @if($item->image != null)
+                    <div class="catalog_single_main_logo">
+                        <img src="{{ $item->getImage() }}" alt="">
+                    </div>
+                @endif
                 <div class="catalog_single_main_info">
                     <h1 class="catalog_single_main_info_title">
-                    {!! $item->ru_title !!}
-                    <!--                             ООО «Orient Finans Bank»
-<span>
-    АКБ головной офис - г. ТАШКЕНТ
-</span> -->
+                        {!! $item->ru_title !!}
                     </h1>
                     <div class="catalog_single_main_info_list">
                         <a href="tel:{{ $item->phone_number }}" class="catalog_single_main_info_list_item">
-                            {{--<i class="fa fa-phone fa-2x"></i>--}}{{ $item->phone_number }}
+                            {{--<i class="fa fa-phone fa-2x"></i>--}}
+                            {{ $item->phone_number }}
                         </a>
                         {{--<a href="{{ $item->url }}" class="catalog_single_main_info_list_item">--}}
                             {{--<i class="fa fa-link fa-2x"></i>{{ $item->url }}--}}
                         {{--</a>--}}
                     </div>
+                </div>
+                <div class="catalog_single_description">
+                    {!! $item->ru_description !!}
                 </div>
             </div>
             <div class="col-12 col-lg-5">
@@ -132,9 +157,6 @@
         </div>
         <div class="row">
             <div class="col-12 col-lg-7">
-                <div class="catalog_single_description">
-                    {!! $item->ru_description !!}
-                </div>
             </div>
             @if($item->geo_location != '')
                 <div class="col-12 col-lg-5">
