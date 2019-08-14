@@ -86,7 +86,7 @@
                     </h1>
                     <div class="catalog_single_main_info_list">
                         <a href="tel:{{ $item->phone_number }}" class="catalog_single_main_info_list_item">
-                            {{--<i class="fa fa-phone fa-2x"></i>--}}
+                            <i class="fa fa-phone fa-2x"></i>
                             {{ $item->phone_number }}
                         </a>
                         {{--<a href="{{ $item->url }}" class="catalog_single_main_info_list_item">--}}

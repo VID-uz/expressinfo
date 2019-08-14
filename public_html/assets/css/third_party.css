@@ -2746,7 +2746,7 @@ small{
 
 	display: inline-block;
 
-	width: 100%;
+	width: 58%;
 
 	font-family: "OpenSans";
 
@@ -3387,7 +3387,7 @@ small{
 
 @media only screen and (min-width: 1100px) {
 	.catalog_single_main_info_list a{
-		padding-left: 0;
+		/*padding-left: 0;*/
 	}
 }
 @media only screen and (max-width: 1200px){
@@ -3545,7 +3545,7 @@ small{
 
 @media only screen and (max-width: 992px){
 	.catalog_single_main_info_list{
-		text-align: center;
+		justify-content: space-around;
 	}
 	.main_header_inner_buttons{
 
@@ -4403,6 +4403,7 @@ small{
 
 @media only screen and (min-width: 576px){
 
+
 	.mobile_main{
 
 		width: calc(100vh - 17%);
@@ -4472,7 +4473,7 @@ small{
 
 	.catalog_single_main_info_list_item{
 
-	    padding: 0 5px 0 0px;
+	    padding: 0 5px 0 20px;
 
 	}
 
