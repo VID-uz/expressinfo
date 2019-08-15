@@ -32,9 +32,9 @@
                         <div class="categories_item @if(!$catalog->active) disabled @endif">
                             @if($catalog->image != null || $catalog->url != null)
                                 <a href="{{ (($catalog->url != '' || $catalog->url != null) && $catalog->active) ? route('home.redirect', ['id' => $catalog->id]) : '#' }}" class="categories_item_inner">
-                                    @else
-                                        <a href="{{ route('home.catalog.single', $catalog->id) }}" class="categories_item_inner categories_item_inner_new @if(!$catalog->active) disabled @endif">
-                                            @endif
+                            @else
+                                <a href="{{ route('home.catalog.single', $catalog->id) }}" class="categories_item_inner categories_item_inner_new @if(!$catalog->active) disabled @endif">
+                            @endif
                                             @if($catalog->image != null)
                                                 <div class="categories_item_icon">
                                                 @if(($catalog->url != '' || $catalog->url != null) && $catalog->active)
