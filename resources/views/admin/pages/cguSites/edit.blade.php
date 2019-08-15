@@ -158,17 +158,8 @@
                             <label for="">Файл</label>
                             @if($item->image != null)
                             <br>
-                                @if($item->getFileType() == 'audio')
-                                    <audio controls src="{{ $item->getUrl() }}">
-                                    </audio>
-                                @elseif($item->getFileType() == 'image')
-                                    <img src="{{ $item->getUrl() }}" width="200" alt="">
-                                @elseif($item->getFileType() == 'video')
-                                    <video width="400" height="300" controls>
-                                        <source src="{{ $item->getUrl() }}">
-                                    </video>
-                                @elseif($item->getFileType() == 'application')
-                                <a href="{{ $item->getUrl() }}" target="_blank">PDF - файл</a>
+                                @if($item->image != null)
+                                    <img src="{{ $item->getImage() }}" width="200" alt="">
                                 @endif
                             <br>
                             @endif
