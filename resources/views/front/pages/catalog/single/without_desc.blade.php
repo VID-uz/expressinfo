@@ -19,7 +19,7 @@
     <link rel="stylesheet" id="css-main" href="{{ asset('css/jquery.fancybox.min.css') }}">
     <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/owl.theme.default.min.css') }}">
     <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/third_party.css') }}?ver=5">
+    <link rel="stylesheet" href="{{ asset('assets/css/third_party.css') }}?ver=6">
     <style>
         .owl-item.active a{
             height: 310px;
