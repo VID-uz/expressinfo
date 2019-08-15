@@ -75,11 +75,11 @@
 
             </div>
             <div class="col-12 col-lg-7 catalog_single_main_inner" style="margin-bottom: auto;">
-                @if($item->image != null)
-                    <div class="catalog_single_main_logo">
-                        <img src="{{ $item->getImage() }}" alt="">
-                    </div>
-                @endif
+                {{--@if($item->image != null)--}}
+                    {{--<div class="catalog_single_main_logo">--}}
+                        {{--<img src="{{ $item->getImage() }}" alt="">--}}
+                    {{--</div>--}}
+                {{--@endif--}}
                 <div class="catalog_single_main_info">
                     <h1 class="catalog_single_main_info_title">
                         {!! $item->ru_title !!}
