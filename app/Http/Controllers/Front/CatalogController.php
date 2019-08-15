@@ -75,7 +75,7 @@ class CatalogController extends Controller
     {
         $item = Catalog::findOrFail($id);
 
-        return view('front.pages.catalog.catalog_single', compact(
+        return view('front.pages.catalog.single.single', compact(
             'item'
         ));
     }

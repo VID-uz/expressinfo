@@ -2746,7 +2746,7 @@ small{
 
 	display: inline-block;
 
-	width: 58%;
+	width: auto;
 
 	font-family: "OpenSans";
 
@@ -3004,7 +3004,8 @@ small{
 	margin: 0;
 
 	padding: 0;
-
+	padding-left: 26px;
+	padding-top: 20px;
 }
 
 .catalog_single_map{

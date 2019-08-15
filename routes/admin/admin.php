@@ -33,5 +33,6 @@ Route::middleware('admin.auth')->prefix('admin')->namespace('Admin')->group(func
     Route::post('/change/position/2', 'DashboardController@changePosition2')->name('admin.category.change.position2');
     Route::post('/change/position/site', 'DashboardController@changePositionSite')->name('admin.category.change.position.site');
     Route::post('/search/catalog', 'DashboardController@searchCatalog')->name('admin.search.catalog');
+    Route::get('/remove/image/{id}', 'DashboardController@removeImage')->name('remove.ad.image');
 
 });

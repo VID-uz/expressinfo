@@ -101,7 +101,6 @@ class Catalog extends Model
         }
     }
 
-
     public function category()
     {
         return $this->hasOne('App\Models\CatalogCategory', 'id', 'category_id');
@@ -110,6 +109,11 @@ class Catalog extends Model
     public function categories()
     {
         return $this->hasOne('App\Models\CatalogCategory', 'id', 'category_id');
+    }
+
+    public function ads()
+    {
+        return $this->hasMany('App\CatalogAd', 'catalog_id', 'id');
     }
 
     public function tags()

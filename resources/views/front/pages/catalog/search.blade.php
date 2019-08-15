@@ -37,7 +37,7 @@
                     </div>
                 @else
                     @foreach($result as $catalog)
-                        @if($catalog->image != null)
+                        @if($catalog->image != null || $catalog->url != null)
                             <a  href="{{ (($catalog->url != '' || $catalog->url != null) && $catalog->active) ? route('home.redirect', ['id' => $catalog->id]) : '#' }}" class="categories_item @if(!$catalog->active) disabled @endif">
                         @else
                             <a href="{{ route('home.catalog.single', $catalog->id) }}" class="categories_item @if(!$catalog->active) disabled @endif">

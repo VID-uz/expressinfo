@@ -20,6 +20,14 @@
     <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/owl.theme.default.min.css') }}">
     <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/third_party.css') }}?ver=5">
+    <style>
+        .owl-item.active a{
+            height: 310px;
+        }
+        .owl-item.active a img{
+            object-fit: cover;
+        }
+    </style>
 </head>
 <body>
 <div class="contacts_popup" id="contacts_popup" style="display: none;">
@@ -74,51 +82,39 @@
                 </nav>
 
             </div>
-            <div class="col-12 col-lg-7 catalog_single_main_inner" style="margin-bottom: auto;">
-                @if($item->image != null)
-                    <div class="catalog_single_main_logo">
-                        <img src="{{ $item->getImage() }}" alt="">
-                    </div>
-                @endif
-                <div class="catalog_single_main_info">
+            <div class="col-12 col-lg-12" style="margin-bottom: auto;">
+                {{--@if($item->image != null)--}}
+                    {{--<div class="catalog_single_main_logo">--}}
+                        {{--<img src="{{ $item->getImage() }}" alt="">--}}
+                    {{--</div>--}}
+                {{--@endif--}}
+                <div class="catalog_single_main_info text-center">
                     <h1 class="catalog_single_main_info_title">
                         {!! $item->ru_title !!}
                     </h1>
-                    <div class="catalog_single_main_info_list">
+                    <div class="catalog_single_main_info_list" style="justify-content: space-around;">
                         <a href="tel:{{ $item->phone_number }}" class="catalog_single_main_info_list_item">
                             <i class="fa fa-phone fa-2x"></i>
                             {{ $item->phone_number }}
                         </a>
                         {{--<a href="{{ $item->url }}" class="catalog_single_main_info_list_item">--}}
-                            {{--<i class="fa fa-link fa-2x"></i>{{ $item->url }}--}}
+                        {{--<i class="fa fa-link fa-2x"></i>{{ $item->url }}--}}
                         {{--</a>--}}
                     </div>
                 </div>
-                <div class="catalog_single_description">
-                    {!! $item->ru_description !!}
-                </div>
             </div>
-            <div class="col-12 col-lg-5">
+            <div class="col-12 col-lg-12 mt-50">
                 <div class="catalog_single_sliders_outer">
                     <div id="sync1" class="catalog_single_main_slider_main owl-carousel owl-theme">
-                        <a href="/img/ad-logo.jpg"  data-fancybox="catalog_single_slider_item" data-caption="" class="catalog_single_main_slider_main_item">
-                            <img src="/img/ad-logo.jpg" alt="">
-                        </a>
-                        <a href="/img/ad-logo.jpg"  data-fancybox="catalog_single_slider_item" data-caption="" class="catalog_single_main_slider_main_item">
-                            <img src="/img/ad-logo.jpg" alt="">
-                        </a>
-                        <a href="/img/ad-logo.jpg"  data-fancybox="catalog_single_slider_item" data-caption="" class="catalog_single_main_slider_main_item">
-                            <img src="/img/ad-logo.jpg" alt="">
-                        </a>
-                        <a href="/img/ad-logo.jpg"  data-fancybox="catalog_single_slider_item" data-caption="" class="catalog_single_main_slider_main_item">
-                            <img src="/img/ad-logo.jpg" alt="">
-                        </a>
-                        <a href="/img/ad-logo.jpg"  data-fancybox="catalog_single_slider_item" data-caption="" class="catalog_single_main_slider_main_item">
-                            <img src="/img/ad-logo.jpg" alt="">
-                        </a>
-                        <a href="/img/ad-logo.jpg"  data-fancybox="catalog_single_slider_item" data-caption="" class="catalog_single_main_slider_main_item">
-                            <img src="/img/ad-logo.jpg" alt="">
-                        </a>
+                        @forelse($item->ads as $image)
+                            <a href="{{ $image->getImage() }}"  data-fancybox="catalog_single_slider_item" data-caption="" class="catalog_single_main_slider_main_item">
+                                <img src="{{ $image->getImage() }}" alt="">
+                            </a>
+                        @empty
+                            <a href="/img/ad-logo.jpg"  data-fancybox="catalog_single_slider_item" data-caption="" class="catalog_single_main_slider_main_item">
+                                <img src="/img/ad-logo.jpg" alt="">
+                            </a>
+                        @endif
                     </div>
                     <div class="catalog_single_main_slider_nav_outer">
                         <button class="catalog_single_main_slider_btn catalog_single_main_slider_btn_left">
@@ -127,24 +123,15 @@
                             </svg>
                         </button>
                         <div id="sync2" class="catalog_single_main_slider_nav owl-carousel owl-theme">
-                            <div class="catalog_single_main_slider_nav_item">
-                                <img src="/img/ad-logo.jpg" alt="">
-                            </div>
-                            <div class="catalog_single_main_slider_nav_item">
-                                <img src="/img/ad-logo.jpg" alt="">
-                            </div>
-                            <div class="catalog_single_main_slider_nav_item">
-                                <img src="/img/ad-logo.jpg" alt="">
-                            </div>
-                            <div class="catalog_single_main_slider_nav_item">
-                                <img src="/img/ad-logo.jpg" alt="">
-                            </div>
-                            <div class="catalog_single_main_slider_nav_item">
-                                <img src="/img/ad-logo.jpg" alt="">
-                            </div>
-                            <div class="catalog_single_main_slider_nav_item">
-                                <img src="/img/ad-logo.jpg" alt="">
-                            </div>
+                            @forelse($item->ads as $image)
+                                <div class="catalog_single_main_slider_nav_item">
+                                    <img src="{{ $image->getImage() }}" alt="">
+                                </div>
+                            @empty
+                                <div class="catalog_single_main_slider_nav_item">
+                                    <img src="/img/ad-logo.jpg" alt="">
+                                </div>
+                            @endif
                         </div>
                         <button class="catalog_single_main_slider_btn catalog_single_main_slider_btn_right">
                             <svg viewBox="0 0 15 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -166,6 +153,7 @@
                 </div>
             @endif
         </div>
+
         <div class="row catalog_single_section">
             <div class="col-12 col-lg-7">
                 <!-- <h1 class="catalog_single_section_title">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\CatalogAd;
 use App\Models\CguSite;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -112,5 +113,14 @@ class DashboardController extends Controller
         }
 
         return redirect()->route('admin.index');
+    }
+
+    public function removeImage($id)
+    {
+        $img = CatalogAd::find($id);
+        $img->removeImage();
+        $img->delete();
+
+        return redirect()->back();
     }
 }

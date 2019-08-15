@@ -222,6 +222,19 @@
                     <!-- END Form -->
                 </div>
             </div>
+            <div class="col-md-12">
+                <div class="block">
+                    <div class="block-header">
+                        <h1 class="block-title">Реклама</h1>
+                    </div>
+                    <div class="block-content">
+                        <div class="form-group">
+                            <label>Добавить реклакму в слайдер</label>
+                            <input type="file" name="catalog_ad[]" multiple class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="row mb-3">
             <div class="col-md-12">
@@ -233,6 +246,20 @@
             </div>
         </div>
     </form>
+    <div class="row mb-3">
+        @foreach($item->ads as $ad)
+            <div class="col-md-4">
+                <div class="block pb-3">
+                    <div class="block-content">
+                        <img src="{{ $ad->getImage() }}" alt="" style="width: 100%;">
+                    </div>
+                    <div class="block-footer text-right">
+                        <a href="{{ route('remove.ad.image', $ad->id) }}" class="btn btn-primary">Удалить</a>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
 @endsection
 
 

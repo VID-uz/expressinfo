@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\CatalogAd;
 use App\Models\Catalog;
 use App\Models\CatalogCategory;
 use App\Models\Tag;
@@ -133,6 +134,14 @@ class CatalogController extends Controller
         if($request->get('tags_id') != null) :
             $item->tags()->attach($request->get('tags_id'));
         endif;
+        if($request->file('catalog_ad') != null)
+        {
+            foreach ($request->file('catalog_ad') as $image)
+            {
+                $img = CatalogAd::create(['catalog_id' => $item->id]);
+                $img->uploadImage($image);
+            }
+        }
 
         return redirect()->route('catalog.index');
     }
