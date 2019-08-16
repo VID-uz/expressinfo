@@ -65,12 +65,15 @@
                 <nav class="breadcrumb push mb-0">
 
                     <a class="breadcrumb-item" href="/categories">Главная</a>
-
-                    @if($item->category->hasChildren())
-                        @if(count($item->category->children) > 2)
-                            <a href="{{ route('home.category', $item->category->id) }}" class="breadcrumb-item">{{ strip_tags($item->category->ru_title) }}</a>
+                    @if($item->category->hasParent())
+                        @if($item->category->parent->hasChildren())
+                            @if(count($item->category->parent->children) > 1)
+                                <a href="{{ route('home.category', $item->category->parent->id) }}" class="breadcrumb-item">{{ strip_tags($item->category->ru_title) }}</a>
+                            @else
+                                <a href="{{ route('home.catalog', $item->category->parent->id) }}" class="breadcrumb-item">{{ strip_tags($item->category->ru_title) }}</a>
+                            @endif
                         @else
-                            <a href="{{ route('home.catalog', $item->category->id) }}" class="breadcrumb-item">{{ strip_tags($item->category->ru_title) }}</a>
+                            <a href="{{ route('home.category', $item->category->parent->id) }}" class="breadcrumb-item">{{ strip_tags($item->category->ru_title) }}</a>
                         @endif
                     @else
                         <a href="{{ route('home.catalog', $item->category->id) }}" class="breadcrumb-item">{{ strip_tags($item->category->ru_title) }}</a>

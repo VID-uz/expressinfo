@@ -19,9 +19,19 @@ class CatalogCategory extends Model
         return $this->hasMany('App\Models\CatalogCategory', 'parent_id', 'id');
     }
 
+    public function parent()
+    {
+        return $this->hasOne('App\Models\CatalogCategory', 'id', 'parent_id');
+    }
+
     public function hasChildren()
     {
         return (isset($this->children[0])) ? true : false;
+    }
+
+    public function hasParent()
+    {
+        return (isset($this->parent[0])) ? true : false;
     }
 
     public function hasCatalogs()
