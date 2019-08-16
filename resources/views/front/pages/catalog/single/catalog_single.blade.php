@@ -20,6 +20,9 @@
     <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/owl.theme.default.min.css') }}">
     <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/third_party.css') }}?ver=6">
+    <style>
+
+    </style>
 </head>
 <body>
 <div class="contacts_popup" id="contacts_popup" style="display: none;">

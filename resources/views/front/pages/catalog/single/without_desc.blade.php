@@ -27,6 +27,11 @@
         .owl-item.active a img{
             object-fit: cover;
         }
+        @media only screen and (min-width: 1000px){
+            .owl-item.active a img{
+                object-fit: contain !important;
+            }
+        }
     </style>
 </head>
 <body>
