@@ -52,7 +52,7 @@ class CguCatalogController extends Controller
 //        ]);
 
         $item = CguCatalog::create($request->all());
-        $item->uploadImage($request->file('image'));
+        $item->uploadFile($request->file('image'));
 
 
         return redirect()->route('cgucatalogs.index');
@@ -102,7 +102,7 @@ class CguCatalogController extends Controller
 
         $item = CguCatalog::find($id);
         $item->update($request->all());
-        $item->uploadImage($request->file('image'));
+        $item->uploadFile($request->file('image'));
 
         return redirect()->route('cgucatalogs.index');
     }
