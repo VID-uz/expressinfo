@@ -151,13 +151,15 @@
                                 <select class="form-control" id="catselect2" name="category_id">
                                     @if($categories->isEmpty())
                                         <option value="0" disabled>-- нет --</option>
-                                    @endif
-                                    @foreach($categories as $category_list)
-                                        <option value="{{ $category_list->id }}" @if($category_list->hasChildren()) disabled @endif>{{ strip_tags($category_list->ru_title) }}</option>
+                                    @else
+                                        <option value="0">-- нет --</option>
+                                        @foreach($categories as $category_list)
+                                            <option value="{{ $category_list->id }}" @if($category_list->hasChildren()) disabled @endif>{{ strip_tags($category_list->ru_title) }}</option>
                                         @if($category_list->hasChildren())
                                             @include('admin.pages.catalog.components.categories', ['dilimiter' => '---', 'categories_id' => []])
-                                        @endif
-                                    @endforeach
+                                            @endif
+                                        @endforeach
+                                    @endif
                                 </select>
                                 <label for="material-select2">Категория</label>
                             </div>
