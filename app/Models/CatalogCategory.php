@@ -31,7 +31,7 @@ class CatalogCategory extends Model
 
     public function hasParent()
     {
-        return (isset($this->parent[0])) ? true : false;
+        return ($this->parent != null) ? true : false;
     }
 
     public function hasCatalogs()

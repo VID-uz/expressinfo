@@ -72,6 +72,7 @@
                             @else
                                 <a href="{{ route('home.catalog', $item->category->parent->id) }}" class="breadcrumb-item">{{ strip_tags($item->category->ru_title) }}</a>
                             @endif
+                            <span class="breadcrumb-item active">{{ strip_tags($item->category->parent->ru_title) }}</span>
                         @else
                             <a href="{{ route('home.category', $item->category->parent->id) }}" class="breadcrumb-item">{{ strip_tags($item->category->ru_title) }}</a>
                         @endif
