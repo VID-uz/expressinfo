@@ -37,8 +37,13 @@ class DashboardController extends Controller
 
     public function searchCatalog(Request $request)
     {
-        $texts = Catalog::where('ru_title', 'like', '%' . $request->get('text') . '%')->get()->pluck('id', 'ru_title');
-        return json_encode($texts);
+        if($request->get('text') != '')
+        {
+            $texts = Catalog::where('ru_title', 'like', '%' . $request->get('text') . '%')->take(20)->orderBy('id', 'desc')->get()->pluck('id', 'ru_title');
+            return json_encode($texts);
+        }
+        else
+            return null;
     }
 
     public function changePosition2()

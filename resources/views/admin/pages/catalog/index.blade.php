@@ -22,7 +22,7 @@
 
 @section('content')
     <h2 class="content-heading">
-        Все рекламодатели
+        Все рекламодатели - {{ $catalogCount }}
     </h2>
     <div class="row">
         <div class="col-md-12"><div class="block">
@@ -63,7 +63,7 @@
                                 </td>
                                 <td class="font-w600">{{ strip_tags($item->ru_title) }}</td>
                                 <td class="d-none d-sm-table-cell">{{ $item->getClickCount() }}</td>
-                                <td class="d-none d-sm-table-cell">{{ strip_tags($item->categories->ru_title) }}</td>
+                                <td class="d-none d-sm-table-cell">{{ (isset($item->categories->ru_title)) ? strip_tags($item->categories->ru_title) : '' }}</td>
                                 <td class="d-none d-sm-table-cell">{!! ($item->active) ? '<font style="color: green;">Да</font>' : '<font style="color: red;">Нет</font>' !!}</td>
                                 <td class="text-center">
                                     <div class="btn-group">
@@ -104,6 +104,7 @@
         $(document).ready(function() {
             $('.searchCatalog').blur(function (e) {
                 setTimeout(function () {
+                    $('.dataset ul').empty();
                     $('.dataset').attr('style', 'display: none');
                 }, 200);
             });
@@ -119,7 +120,7 @@
                 });
                 var formData = new FormData;
                 formData.append('text', $(this).val());
-                if($(this).val() != '')
+                if($(this).val() != '' && $(this).val() != null)
                 {
                     $.ajax({
                         type: 'POST',
@@ -130,11 +131,14 @@
                         contentType: false,
                         success: function(data){
                             console.log(data);
-                            $('.dataset').attr('style', 'display: block');
-                            $('.dataset ul').empty();
-                            $.each(data, function (key, id) {
-                                $('.dataset ul').append('<li><a href="/admin/catalog/' + id + '/edit">' + key + '</a><a style="margin-left: 20px;" href="/admin/catalog/'+id+'/delete"><i class="fa fa-remove"></i></a></li>');
-                            });
+                            if(data != null){
+                                console.log(data);
+                                $('.dataset').attr('style', 'display: block');
+                                $('.dataset ul').empty();
+                                $.each(data, function (key, id) {
+                                    $('.dataset ul').append('<li><a href="/admin/catalog/' + id + '/edit">' + key + '</a><a style="margin-left: 20px;" href="/admin/catalog/'+id+'/delete"><i class="fa fa-remove"></i></a></li>');
+                                });
+                            }
                         },
                         error: function (data) {
                             console.log(data);

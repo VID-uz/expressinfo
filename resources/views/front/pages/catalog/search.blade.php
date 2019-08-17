@@ -58,7 +58,7 @@
                                 @if(($catalog->url != '' || $catalog->url != null) && $catalog->active)
                                     <!-- <a href="{{ route('home.redirect', ['id' => $catalog->id]) }}"> -->
                                     @endif
-                                    <h1 class="categories_item_title d-lg-block d-sm-none d-none d-md-none">{{ $catalog->ru_title }}</h1>
+                                    <h1 class="categories_item_title">{{ $catalog->ru_title }}</h1>
                                     @if($catalog->url != '' || $catalog->url != null)
                                     <!-- </a> -->
                                     @endif

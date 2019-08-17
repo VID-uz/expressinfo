@@ -71,7 +71,7 @@
                     <a @if($catalog->video != '') href="{{ $catalog->video }}" @endif class="categories_item categories_item2">
                         <div class="categories_item_inner">
                             <div class="categories_item_icon">
-                                <img src="{{ $catalog->getImage() }}" alt="">
+                                <img class="lazy" data-src="{{ $catalog->getImage() }}" alt="">
                             </div>
                             <div class="categories_item_info">
                                 <h1 class="categories_item_title">
@@ -87,7 +87,7 @@
                     @if($file->video == '')
                         @if($file->getFileType() == 'image')
                             <a href="{{ $file->getUrl() }}" data-fancybox="images" data-caption="" class="main_item_img">
-                                <img src="{{ $file->getUrl() }}" style="width: 100%;" alt="" style="width: 100%;">
+                                <img class="lazy" data-src="{{ $file->getUrl() }}" style="width: 100%;" alt="">
                             </a>
                             <p class="main_item_p">{!! $file->ru_title !!}</p>
                         @elseif($file->getFileType() == 'video')

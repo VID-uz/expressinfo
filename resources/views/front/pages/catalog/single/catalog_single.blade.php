@@ -103,6 +103,7 @@
             </div>
             <div class="col-12 col-lg-5">
                 <div class="catalog_single_sliders_outer">
+                    @if(count($item->ads) > 0)
                     <div id="sync1" class="catalog_single_main_slider_main owl-carousel owl-theme">
                         @forelse($item->ads as $image)
                             <a href="{{ $image->getImage() }}"  data-fancybox="catalog_single_slider_item" data-caption="" class="catalog_single_main_slider_main_item">
@@ -120,32 +121,28 @@
                                 <path d="M0 13L15 0.00961876L15 25.9904L0 13Z" fill="#C4C4C4"/>
                             </svg>
                         </button>
+                        @if(count($item->ads) > 0)
                         <div id="sync2" class="catalog_single_main_slider_nav owl-carousel owl-theme">
-                            <div class="catalog_single_main_slider_nav_item">
-                                <img src="/img/ad-logo.jpg" alt="">
-                            </div>
-                            <div class="catalog_single_main_slider_nav_item">
-                                <img src="/img/ad-logo.jpg" alt="">
-                            </div>
-                            <div class="catalog_single_main_slider_nav_item">
-                                <img src="/img/ad-logo.jpg" alt="">
-                            </div>
-                            <div class="catalog_single_main_slider_nav_item">
-                                <img src="/img/ad-logo.jpg" alt="">
-                            </div>
-                            <div class="catalog_single_main_slider_nav_item">
-                                <img src="/img/ad-logo.jpg" alt="">
-                            </div>
-                            <div class="catalog_single_main_slider_nav_item">
-                                <img src="/img/ad-logo.jpg" alt="">
-                            </div>
+                            @if(count($item->ads) > 1)
+                                @forelse($item->ads as $image)
+                                    <a href="{{ $image->getImage() }}"  data-fancybox="catalog_single_slider_item" data-caption="" class="catalog_single_main_slider_main_item">
+                                        <img src="{{ $image->getImage() }}" alt="">
+                                    </a>
+                                @empty
+                                    <a href="/img/ad-logo.jpg"  data-fancybox="catalog_single_slider_item" data-caption="" class="catalog_single_main_slider_main_item">
+                                        <img src="/img/ad-logo.jpg" alt="">
+                                    </a>
+                                @endif
+                            @endif
                         </div>
+                        @endif
                         <button class="catalog_single_main_slider_btn catalog_single_main_slider_btn_right">
                             <svg viewBox="0 0 15 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0 13L15 0.00961876L15 25.9904L0 13Z" fill="#C4C4C4"/>
                             </svg>
                         </button>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>
