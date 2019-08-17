@@ -1,6 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('css')
+    <link rel="stylesheet" href="/css/select2.css">
     <link rel="stylesheet" href="/css/spectrum.css">
     <link rel="stylesheet" href="/css/bootstrap-colorpicker.min.css">
     <style>
@@ -126,7 +127,7 @@
                         <!-- END Step 3 -->
 
                         <div class="form-material floating">
-                            <select class="form-control" id="material-select2" name="parent_id">
+                            <select class="form-control select2" id="material-select2" name="parent_id">
                                 <option value="0" selected>-- нет --</option>
                                 @foreach($categories as $category_list)
                                     <option value="{{ $category_list->id }}">{{ strip_tags($category_list->ru_title) }}</option>
@@ -147,13 +148,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="">Цвет</label>
-                            <div class="js-colorpicker input-group" style="width: max-content">
-                                <input type="text" class="form-control" id="example-colorpicker2" name="color" value="#000">
-                                <span class="input-group-addon"><i></i></span>
-                            </div>
-                        </div>
+                        {{--<div class="form-group">--}}
+                            {{--<label for="">Цвет</label>--}}
+                            {{--<div class="js-colorpicker input-group" style="width: max-content">--}}
+                                {{--<input type="text" class="form-control" id="example-colorpicker2" name="color" value="#000">--}}
+                                {{--<span class="input-group-addon"><i></i></span>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                     </div>
                     <!-- END Steps Content -->
                     <!-- END Form -->
@@ -176,13 +177,14 @@
 @section('js')
     <script src="/plugins/ckeditor/ckeditor.js"></script>
     <script src="/plugins/ckfinder/ckfinder.js"></script>
+    <script src="/js/select2.js" type="application/javascript"></script>
     <script src="/js/spectrum.js"></script>
     <script src="/js/bootstrap-colorpicker.min.js"></script>
     <script>
         $(document).ready(function(){
             var editor = CKEDITOR.replaceAll();
             CKFinder.setupCKEditor( editor );
-            
+            $('.select2').select2();
             jQuery(function () {
                 Codebase.helpers('colorpicker');
             });

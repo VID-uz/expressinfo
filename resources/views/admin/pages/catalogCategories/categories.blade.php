@@ -5,12 +5,12 @@
 @endsection
 @section('content')
     <h2 class="content-heading">
-        Дочерние категории
+        Дочерние категории - {{ strip_tags($parent->ru_title) }}
     </h2>
     <div class="row">
         <div class="col-md-12"><div class="block">
                 <div class="block-header block-header-default">
-                    <h3 class="block-title">категории</h3>
+                    <h3 class="block-title">{{ strip_tags($parent->ru_title) }}</h3>
                     <a href="{{ route('catalogcategories.create') }}" class="btn btn-primary">
                         Создать
                     </a>
@@ -61,6 +61,14 @@
                                                 <i class="fa fa-times"></i>
                                             </button>
                                         </form>
+                                        <select name="change_position" class="change_position" data-id="{{ $category->id }}">
+                                            <?php $i = 0; ?>
+                                            @foreach($categories as $category_list)
+                                                <option value="{{ $i }}" @if($category->position == $i) selected @endif>{{ $i }}</option>
+                                                <?php $i++; ?>
+                                            @endforeach
+                                            <option value="{{ $i }}" @if($category->position == $i) selected @endif>{{ $i }}</option>
+                                        </select>
                                     </div>
                                 </td>
                             </tr>
@@ -96,6 +104,39 @@
             {{--});--}}
             {{--@endif--}}
             {{--}, 500);--}}
+            $('.change_position').change(function (e) {
+                e.preventDefault();
+                var formData = new FormData();
+                formData.append('id', $(this).data('id'));
+                formData.append('position', e.target.value);
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                $.ajax({
+                    type: 'POST',
+                    url: '/admin/change/position',
+                    dataType: 'html',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    beforeSend: function () {
+                        $('.change_position').attr('disabled', '');
+                    },
+                    success: function(data){
+                        if(data != 'true' && data != 'false')
+                        {
+                            $('select[data-id=' + JSON.parse(data).id + ']').val(JSON.parse(data).position);
+                        }
+
+                        $('.change_position').removeAttr('disabled');
+                    },
+                    error: function (data) {
+                        console.log(data);
+                    }
+                });
+            });
 
 
         } );

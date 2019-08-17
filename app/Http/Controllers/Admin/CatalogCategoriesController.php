@@ -29,9 +29,10 @@ class CatalogCategoriesController extends Controller
     public function categories($id)
     {
         $categories = CatalogCategory::findOrFail($id)->children;
+        $parent = CatalogCategory::findOrFail($id);
 
         return view('admin.pages.catalogCategories.categories', compact(
-            'categories'
+            'categories', 'parent'
         ));
     }
     /**
@@ -77,6 +78,11 @@ class CatalogCategoriesController extends Controller
 //        ]);
         $item = CatalogCategory::create($request->all());
         $item->uploadImage($request->file('image'));
+        if($request->get('parent_id') != null)
+        {
+            $this->position = count(CatalogCategory::find($request->get('parent_id'))->children);
+            $this->save();
+        }
 
         return redirect()->route('catalogcategories.index');
     }

@@ -37,7 +37,8 @@
                         <?php $i = 10; ?>
                         @foreach($categories as $category)
                             <tr>
-                                <td width="50" class="text-center d-none d-md-none d-lg-table-cell" style="background-color:{{ $category->color }}">
+                                {{--style="background-color:{{ $category->color }}"--}}
+                                <td width="50" class="text-center d-none d-md-none d-lg-table-cell">
                                     <img class="img-avatar img-avatar48 rounded-0" src="{{ $category->getImage() }}">
                                 </td>
                                 <td class="font-w600">{{ strip_tags($category->ru_title) }}</td>

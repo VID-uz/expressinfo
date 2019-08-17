@@ -133,7 +133,7 @@
                             $('.dataset').attr('style', 'display: block');
                             $('.dataset ul').empty();
                             $.each(data, function (key, id) {
-                                $('.dataset ul').append('<li><a href="/admin/catalog/' + id + '/edit">' + key + '</a></li>');
+                                $('.dataset ul').append('<li><a href="/admin/catalog/' + id + '/edit">' + key + '</a><a style="margin-left: 20px;" href="/admin/catalog/'+id+'/delete"><i class="fa fa-remove"></i></a></li>');
                             });
                         },
                         error: function (data) {

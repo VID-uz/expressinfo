@@ -16,7 +16,7 @@ class CatalogCategory extends Model
 
     public function children()
     {
-        return $this->hasMany('App\Models\CatalogCategory', 'parent_id', 'id');
+        return $this->hasMany('App\Models\CatalogCategory', 'parent_id', 'id')->orderBy('position', 'asc');
     }
 
     public function parent()

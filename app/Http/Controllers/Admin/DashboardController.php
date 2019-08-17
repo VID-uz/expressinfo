@@ -15,7 +15,7 @@ class DashboardController extends Controller
 
     public function changePosition()
     {
-        if($res = CatalogCategory::where('position', $_POST['position'])->first())
+        if($res = CatalogCategory::where('id', $_POST['id'])->where('position', $_POST['position'])->first())
         {
             $res->position = 0;
             $res->save();
@@ -118,6 +118,15 @@ class DashboardController extends Controller
     public function removeImage($id)
     {
         $img = CatalogAd::find($id);
+        $img->removeImage();
+        $img->delete();
+
+        return redirect()->back();
+    }
+
+    public function removeCatalog($id)
+    {
+        $img = Catalog::find($id);
         $img->removeImage();
         $img->delete();
 
