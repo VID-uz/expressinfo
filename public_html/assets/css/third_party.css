@@ -2796,8 +2796,9 @@ small{
 }
 
 .catalog_single_sliders_outer{
-
-	display: block;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;	
 
 	width: 100%;
 
@@ -2853,7 +2854,7 @@ small{
 
 	display: block;
 
-	width: 100%;
+	width: 70%;
 
 	position: relative;
 
