@@ -103,9 +103,9 @@
                             <li>
                                 <a class="children" href="{{ route('catalogcategories.index') }}">Категории</a>
                             </li>
-                            <li>
-                                <a class="children" href="{{ route('catalogtags.index') }}">Теги</a>
-                            </li>
+                            {{--<li>--}}
+                                {{--<a class="children" href="{{ route('catalogtags.index') }}">Теги</a>--}}
+                            {{--</li>--}}
                             <li>
                                 <a class="children" href="{{ route('catalog.index') }}">Рекламодатели</a>
                             </li>
