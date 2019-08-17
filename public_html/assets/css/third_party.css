@@ -2853,9 +2853,6 @@ small{
 
 }
 
-.catalog_single_main_slider_nav_outer2{
-	width: 70%;
-}
 .catalog_single_main_slider_nav_outer{
 
 	display: block;
@@ -2868,6 +2865,9 @@ small{
 
 	padding: 10px 0;
 
+}
+.catalog_single_main_slider_nav_outer2{
+	width: 70% !important;
 }
 
 .catalog_single_main_slider_btn{
