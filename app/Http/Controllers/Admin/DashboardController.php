@@ -39,7 +39,7 @@ class DashboardController extends Controller
     {
         if($request->get('text') != '')
         {
-            $texts = Catalog::where('ru_title', 'like', '%' . $request->get('text') . '%')->get()->pluck('id', 'ru_title');
+            $texts = Catalog::where('ru_title', 'like', '%' . $request->get('text') . '%')->take(20)->orderBy('id', 'desc')->get()->pluck('id', 'ru_title');
             return json_encode($texts);
         }
         else
