@@ -2798,7 +2798,8 @@ small{
 .catalog_single_sliders_outer{
 	display: flex;
 	flex-direction: column;
-	justify-content: center;	
+	justify-content: center;
+	align-items: center;
 
 	width: 100%;
 
