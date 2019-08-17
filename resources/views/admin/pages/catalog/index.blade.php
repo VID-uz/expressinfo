@@ -63,7 +63,7 @@
                                 </td>
                                 <td class="font-w600">{{ strip_tags($item->ru_title) }}</td>
                                 <td class="d-none d-sm-table-cell">{{ $item->getClickCount() }}</td>
-                                <td class="d-none d-sm-table-cell">{{ strip_tags($item->categories->ru_title) }}</td>
+                                <td class="d-none d-sm-table-cell">{{ (isset($item->categories->ru_title)) ? strip_tags($item->categories->ru_title) : '' }}</td>
                                 <td class="d-none d-sm-table-cell">{!! ($item->active) ? '<font style="color: green;">Да</font>' : '<font style="color: red;">Нет</font>' !!}</td>
                                 <td class="text-center">
                                     <div class="btn-group">
