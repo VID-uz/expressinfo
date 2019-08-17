@@ -2794,12 +2794,14 @@ small{
     left: 0;
 
 }
-
-.catalog_single_sliders_outer{
-	display: flex;
+.catalog_single_sliders_outer2{
+	display: flex !important;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+}
+.catalog_single_sliders_outer{
+	display: block;
 
 	width: 100%;
 
@@ -2851,11 +2853,14 @@ small{
 
 }
 
+.catalog_single_main_slider_nav_outer2{
+	width: 70%;
+}
 .catalog_single_main_slider_nav_outer{
 
 	display: block;
 
-	width: 70%;
+	width: 100%;
 
 	position: relative;
 
