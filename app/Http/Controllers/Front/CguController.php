@@ -33,7 +33,7 @@ class CguController extends Controller
     public function cguCategory($id)
     {
         $category = CguCategories::find($id);
-        $files = $category->files()->paginate(36);
+        $files = $category->files()->paginate(24);
         $sites = $category->sites()->get();
 
         return view('front.pages.cgu.category', compact(

@@ -302,7 +302,7 @@
 <script src="{{ asset('assets/js/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js')}}"></script>
 <script src="{{ asset('assets/js/jquery.steps.min.js')}}"></script>
 <script src="/js/jquery.fancybox.min.js"></script>
-<script src="/js/lazyload.js"></script>
+<script src="/js/lazyload.min.js"></script>
 
 <!-- Page JS Plugins -->
 <script src="{{ asset('assets/js/plugins/chartjs/Chart.bundle.min.js') }}"></script>
@@ -355,6 +355,13 @@
         {{--window.onunload = function(){};--}}
     {{--@endif--}}
     $(function(){
+        var lazyLoadInstance = new LazyLoad({
+            elements_selector: ".lazy"
+            // ... more custom settings?
+        });
+        if (lazyLoadInstance) {
+            lazyLoadInstance.update();
+        }
         var settings = {
             stepsContainerTag: 'fadeThis',
             labels: {
