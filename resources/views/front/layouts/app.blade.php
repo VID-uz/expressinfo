@@ -19,10 +19,10 @@
     <!-- Codebase framework -->
     <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/codebase.min.css') }}?ver=1">
     <link rel="stylesheet" href="{{ asset('assets/js/plugins/select2/select2.min.css') }}?ver=1">
+    <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/uikit.min.css') }}?ver=1">
     <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
     <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/flat.min.css"> -->
-    <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/third_party.css') }}?ver=100">
-    <link rel="stylesheet" type="text/css" href="/css/animations.css?ver=3">
+    <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/third_party.css') }}?ver=95">
 <!-- <link rel="stylesheet" href="{{ asset('css/steps.css')}}"> -->
     <style>
         fadethis{
@@ -291,6 +291,8 @@
 <script src="{{ asset('assets/js/core/jquery.min.js') }}"></script>
 <script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
 <script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/js/core/uikit.min.js') }}"></script>
+<script src="{{ asset('assets/js/core/uikit-icons.min.js') }}"></script>
 <script src="{{ asset('assets/js/core/jquery.slimscroll.min.js') }}"></script>
 <script src="{{ asset('assets/js/core/jquery.scrollLock.min.js') }}"></script>
 <script src="{{ asset('assets/js/core/jquery.appear.min.js') }}"></script>

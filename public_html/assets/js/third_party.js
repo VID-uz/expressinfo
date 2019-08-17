@@ -11,6 +11,18 @@ $(document).ready(function(){
     return false;
   });
 
+  var emptyCells, i;
+
+  $('.categories').each(function() {
+    emptyCells = [];
+    for (i = 0; i < $(this).find('.categories_item').length; i++) {
+      emptyCells.push($('<div>', {
+        class: 'categories_item categories_item_empty'
+      }));
+    }
+    $(this).append(emptyCells);
+  });
+
   // $('.categories_item').on('click', function(e) {
   //   if(!$(this).hasClass('disabled'))
   //   {
