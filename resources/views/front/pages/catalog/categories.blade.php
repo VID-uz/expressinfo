@@ -8,7 +8,7 @@
 
     <div class="uk-container">
     	<div class="uk-grid uk-grid-medium uk-child-width-1-1">
-    		<div>
+    		<div class="main_form_wrapper">
         		@include('front.pages.catalog.partials.form')
     		</div>
         </div>
