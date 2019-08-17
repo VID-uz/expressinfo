@@ -121,24 +121,17 @@
                             </svg>
                         </button>
                         <div id="sync2" class="catalog_single_main_slider_nav owl-carousel owl-theme">
-                            <div class="catalog_single_main_slider_nav_item">
-                                <img src="/img/ad-logo.jpg" alt="">
-                            </div>
-                            <div class="catalog_single_main_slider_nav_item">
-                                <img src="/img/ad-logo.jpg" alt="">
-                            </div>
-                            <div class="catalog_single_main_slider_nav_item">
-                                <img src="/img/ad-logo.jpg" alt="">
-                            </div>
-                            <div class="catalog_single_main_slider_nav_item">
-                                <img src="/img/ad-logo.jpg" alt="">
-                            </div>
-                            <div class="catalog_single_main_slider_nav_item">
-                                <img src="/img/ad-logo.jpg" alt="">
-                            </div>
-                            <div class="catalog_single_main_slider_nav_item">
-                                <img src="/img/ad-logo.jpg" alt="">
-                            </div>
+                            @if(count($item->ads) > 1)
+                                @forelse($item->ads as $image)
+                                    <a href="{{ $image->getImage() }}"  data-fancybox="catalog_single_slider_item" data-caption="" class="catalog_single_main_slider_main_item">
+                                        <img src="{{ $image->getImage() }}" alt="">
+                                    </a>
+                                @empty
+                                    <a href="/img/ad-logo.jpg"  data-fancybox="catalog_single_slider_item" data-caption="" class="catalog_single_main_slider_main_item">
+                                        <img src="/img/ad-logo.jpg" alt="">
+                                    </a>
+                                @endif
+                            @endif
                         </div>
                         <button class="catalog_single_main_slider_btn catalog_single_main_slider_btn_right">
                             <svg viewBox="0 0 15 26" fill="none" xmlns="http://www.w3.org/2000/svg">
