@@ -22,7 +22,7 @@
 
 @section('content')
     <h2 class="content-heading">
-        Все рекламодатели
+        Все рекламодатели - {{ $catalogCount }}
     </h2>
     <div class="row">
         <div class="col-md-12"><div class="block">
@@ -104,6 +104,7 @@
         $(document).ready(function() {
             $('.searchCatalog').blur(function (e) {
                 setTimeout(function () {
+                    $('.dataset ul').empty();
                     $('.dataset').attr('style', 'display: none');
                 }, 200);
             });
@@ -119,7 +120,7 @@
                 });
                 var formData = new FormData;
                 formData.append('text', $(this).val());
-                if($(this).val() != '')
+                if($(this).val() != '' && $(this).val() != null)
                 {
                     $.ajax({
                         type: 'POST',
@@ -130,11 +131,14 @@
                         contentType: false,
                         success: function(data){
                             console.log(data);
-                            $('.dataset').attr('style', 'display: block');
-                            $('.dataset ul').empty();
-                            $.each(data, function (key, id) {
-                                $('.dataset ul').append('<li><a href="/admin/catalog/' + id + '/edit">' + key + '</a><a style="margin-left: 20px;" href="/admin/catalog/'+id+'/delete"><i class="fa fa-remove"></i></a></li>');
-                            });
+                            if(data != null){
+                                console.log(data);
+                                $('.dataset').attr('style', 'display: block');
+                                $('.dataset ul').empty();
+                                $.each(data, function (key, id) {
+                                    $('.dataset ul').append('<li><a href="/admin/catalog/' + id + '/edit">' + key + '</a><a style="margin-left: 20px;" href="/admin/catalog/'+id+'/delete"><i class="fa fa-remove"></i></a></li>');
+                                });
+                            }
                         },
                         error: function (data) {
                             console.log(data);

@@ -20,9 +20,10 @@ class CatalogController extends Controller
     public function index()
     {
         $catalog = Catalog::orderBy('id', 'desc')->paginate(10);
+        $catalogCount = Catalog::all()->count();
 
         return view('admin.pages.catalog.index', compact(
-            'catalog'
+            'catalog', 'catalogCount'
         ));
     }
 
